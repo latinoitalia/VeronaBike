@@ -67,7 +67,7 @@
       lat = position.coords.latitude;
       lon = position.coords.longitude;
       if (map != undefined) {
-        map.setView([lat, lon], zoomlevel);
+        map.setView([lat, lon], zoomlevel, { animation: true });
       } else {
         getMap();
       }
