@@ -43,7 +43,6 @@
     var lat;
     var lon;
     var map;
-    getMap();
 
     (function runForever() {
       getLocation();
@@ -66,7 +65,11 @@
       //  position.coords.longitude;
       lat = position.coords.latitude;
       lon = position.coords.longitude;
-      map.setView([lat, lon], 13);
+      if (map != undefined) {
+        map.setView([lat, lon], 13);
+      } else {
+        getMap();
+      }
     }
 
     function getMap() {
