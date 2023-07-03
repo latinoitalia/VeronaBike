@@ -42,6 +42,7 @@
     var x = document.getElementById("demo");
     var lat;
     var lon;
+    var map;
 
     (function runForever() {
       getLocation();
@@ -64,16 +65,13 @@
       //  position.coords.longitude;
       lat = position.coords.latitude;
       lon = position.coords.longitude;
+      map.off();
+      map.remove();
       getMap();
     }
 
     function getMap() {
-      var map = L.map("map");
-      if (map != undefined) {
-        map.off();
-        map.remove();
-      }
-
+      map = L.map("map");
       map.setView([lat, lon], 13);
       map.addControl(new L.Control.Fullscreen());
       L.tileLayer(
