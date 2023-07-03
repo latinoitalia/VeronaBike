@@ -43,6 +43,7 @@
     var lat;
     var lon;
     var map;
+    getMap();
 
     (function runForever() {
       getLocation();
@@ -65,16 +66,12 @@
       //  position.coords.longitude;
       lat = position.coords.latitude;
       lon = position.coords.longitude;
-      if (map != undefined) {
-        map.off();
-        map.remove();
-      }
-      getMap();
+      map.setView([lat, lon], 13);
     }
 
     function getMap() {
       map = L.map("map");
-      map.setView([lat, lon], 13);
+      //map.setView([lat, lon], 13);
       map.addControl(new L.Control.Fullscreen());
       L.tileLayer(
         "https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=00fef80623bc42e589b687b623114593",
