@@ -43,6 +43,7 @@
     var lat;
     var lon;
     var map;
+    var zoomlevel = 13;
 
     (function runForever() {
       getLocation();
@@ -66,7 +67,7 @@
       lat = position.coords.latitude;
       lon = position.coords.longitude;
       if (map != undefined) {
-        map.setView([lat, lon], 13);
+        map.setView([lat, lon], zoomlevel);
       } else {
         getMap();
       }
@@ -74,7 +75,7 @@
 
     function getMap() {
       map = L.map("map");
-      map.setView([lat, lon], 13);
+      map.setView([lat, lon], zoomlevel);
       map.addControl(new L.Control.Fullscreen());
       L.tileLayer(
         "https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=00fef80623bc42e589b687b623114593",
@@ -92,6 +93,7 @@
       }).addTo(map);
       map.on("zoomend", function (e) {
         console.log(e.target._zoom);
+        zoomlevel = e.target._zoom;
       });
     }
   </script>
