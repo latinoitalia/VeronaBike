@@ -65,8 +65,10 @@
       //  position.coords.longitude;
       lat = position.coords.latitude;
       lon = position.coords.longitude;
-      map.off();
-      map.remove();
+      if (map != undefined) {
+        map.off();
+        map.remove();
+      }
       getMap();
     }
 
