@@ -87,7 +87,7 @@
         }
       ).addTo(map);
       circle = L.circleMarker([lat, lon], {
-        radius: 50,
+        radius: 10,
       }).addTo(map);
       map.on("zoomend", function (e) {
         console.log(e.target._zoom);
