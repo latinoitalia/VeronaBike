@@ -38,7 +38,6 @@
   </div-->
     </main>
   </body>
-  <script></script>
   <script>
     var x = document.getElementById("demo");
     var lat;
@@ -69,6 +68,10 @@
     }
 
     function getMap() {
+      if (map != undefined) {
+        map.off();
+        map.remove();
+      }
       var map = L.map("map").setView([lat, lon], 13);
       map.addControl(new L.Control.Fullscreen());
       L.tileLayer(
