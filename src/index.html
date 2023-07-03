@@ -43,7 +43,10 @@
     var x = document.getElementById("demo");
     var lat;
     var lon;
-    getLocation();
+    var intervalId = window.setInterval(function () {
+      getLocation();
+    }, 5000);
+
     function getLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
