@@ -42,7 +42,9 @@
     L.tileLayer(
       "https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=00fef80623bc42e589b687b623114593",
       {
-        fullscreenControl: true,
+        fullscreenControl: {
+          pseudoFullscreen: false, // if true, fullscreen to page width and height
+        },
         maxZoom: 19,
         attribution:
           '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
