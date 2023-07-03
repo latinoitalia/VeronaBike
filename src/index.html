@@ -69,6 +69,7 @@
       lon = position.coords.longitude;
       if (map != undefined) {
         map.setView([lat, lon], zoomlevel, { animation: true });
+        circle.setLatLng([lat, lon]);
       } else {
         getMap();
       }
@@ -87,6 +88,9 @@
         }
       ).addTo(map);
       circle = L.circleMarker([lat, lon], {
+        color: "blue",
+        fillColor: "#0f0",
+        fillOpacity: 1,
         radius: 10,
       }).addTo(map);
       map.on("zoomend", function (e) {
