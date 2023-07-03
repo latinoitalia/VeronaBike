@@ -43,6 +43,7 @@
     var x = document.getElementById("demo");
     var lat;
     var lon;
+    getLocation();
     function getLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
@@ -59,23 +60,26 @@
         position.coords.longitude;
       lat = position.coords.latitude;
       lon = position.coords.longitude;
+      getMap();
     }
-    getLocation();
-    var map = L.map("map").setView([lat, lon], 13);
-    map.addControl(new L.Control.Fullscreen());
-    L.tileLayer(
-      "https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=00fef80623bc42e589b687b623114593",
-      {
-        maxZoom: 19,
-        attribution:
-          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-      }
-    ).addTo(map);
-    var circle = L.circle([lat, lon], {
-      color: "red",
-      fillColor: "#f03",
-      fillOpacity: 1,
-      radius: 5,
-    }).addTo(map);
+
+    function getMap() {
+      var map = L.map("map").setView([lat, lon], 13);
+      map.addControl(new L.Control.Fullscreen());
+      L.tileLayer(
+        "https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=00fef80623bc42e589b687b623114593",
+        {
+          maxZoom: 19,
+          attribution:
+            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        }
+      ).addTo(map);
+      var circle = L.circle([lat, lon], {
+        color: "red",
+        fillColor: "#f03",
+        fillOpacity: 1,
+        radius: 5,
+      }).addTo(map);
+    }
   </script>
 </html>
