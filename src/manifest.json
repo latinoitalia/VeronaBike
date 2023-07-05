@@ -9,10 +9,10 @@
         }
     ],
     "name": "Verona Bike",
-    "short_name": "This name will show in your Windows taskbar, in the start menu, and Android homescreen",
-    "start_url": "The URL that should be loaded when your application is opened",
+    "short_name": "Verona Bike",
+    "start_url": "https://red-coast-08838de03.3.azurestaticapps.net",
     "display": "standalone",
-    "description": "A description for your application",
+    "description": "Bike Maps of Verona",
     "lang": " The default language of your application",
     "dir": "auto",
     "theme_color": "#000000",
