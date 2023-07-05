@@ -52,7 +52,13 @@
         {
             "name": "Verona Bike",
             "url": "https://red-coast-08838de03.3.azurestaticapps.net",
-            "description": "Maps of Verona"
+            "description": "Maps of Verona",
+            "icons": [
+                {
+                    "src": "logo96.png",
+                    "sizes": "96x96"
+                }
+            ]
         }
     ]
 }
