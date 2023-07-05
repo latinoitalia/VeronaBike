@@ -21,24 +21,30 @@
     "orientation": "any",
     "icons": [
         {
-            "src": "https://www.pwabuilder.com/assets/icons/icon_512.png",
+            "src": "logo512.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "maskable"
         },
         {
-            "src": "https://www.pwabuilder.com/assets/icons/icon_192.png",
+            "src": "logo192.png",
             "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "logo96.png",
+            "sizes": "96x96",
             "type": "image/png",
             "purpose": "any"
         }
     ],
     "screenshots": [
         {
-            "src": "https://www.pwabuilder.com/assets/screenshots/screen1.png",
-            "sizes": "2880x1800",
+            "src": "screen.png",
+            "sizes": "453x588",
             "type": "image/png",
-            "description": "A screenshot of the home page"
+            "description": "Verona Bike home page"
         }
     ],
     "prefer_related_applications": false,
@@ -46,7 +52,7 @@
         {
             "name": "Verona Bike",
             "url": "https://red-coast-08838de03.3.azurestaticapps.net",
-            "description": "Bike Maps of Verona"
+            "description": "Maps of Verona"
         }
     ]
 }
