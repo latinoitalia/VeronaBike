@@ -32,7 +32,7 @@
       <!--div class=”responsive-map”> 
     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=15-Oy9nbJDqOYxRoh3gnH8AGUhdizp7o&ehbc=2E312F" width="100%" height="450"></iframe>
     </div-->
-      <div id="demo">ciao</div>
+      <div id="demo"></div>
       <div id="map"></div>
 
       <!--div class=”responsive-map”> 
@@ -55,7 +55,7 @@
     };
     getLocation();
     (function runForever() {
-      //getLocation();
+      getLocation();
       setTimeout(runForever, 5000);
     })();
 
@@ -75,8 +75,8 @@
       //  position.coords.longitude;
       lat = position.coords.latitude;
       lon = position.coords.longitude;
-      lat = 45.42;
-      lon = 10.98;
+      //lat = 45.42;
+      //lon = 10.98;
       if (map != undefined) {
         map.setView([lat, lon], zoomlevel, { animation: true });
         circle.setLatLng([lat, lon]);
