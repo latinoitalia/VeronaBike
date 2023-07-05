@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
@@ -20,6 +21,9 @@
       href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css"
       rel="stylesheet"
     />
+    <script>
+      navigator.serviceWorker.register("src/service-worker.js");
+    </script>
     <title>Verona Bike</title>
   </head>
 
