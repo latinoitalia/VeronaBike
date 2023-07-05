@@ -10,7 +10,7 @@
     ],
     "name": "Verona Bike",
     "short_name": "Verona Bike",
-    "start_url": "https://red-coast-08838de03.3.azurestaticapps.net",
+    "start_url": "/",
     "display": "standalone",
     "description": "Bike Maps of Verona",
     "lang": " The default language of your application",
