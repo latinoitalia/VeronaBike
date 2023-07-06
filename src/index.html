@@ -54,26 +54,23 @@
       // Define your style object
       color: "#ff0000",
     };
-    getLocation();
-    (function runForever() {
-      getLocation();
-      setTimeout(runForever, 5000);
-    })();
 
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-      }
+    const options = {
+      enableHighAccuracy: true,
+      maximumAge: 0,
+      timeout: 10000,
+    };
+
+    function error(error) {
+      x.innerHTML = "errore: " + error;
     }
 
     function showPosition(position) {
-      //x.innerHTML =
-      //  "Latitude: " +
-      //  position.coords.latitude +
-      //  "<br>Longitude: " +
-      //  position.coords.longitude;
+      x.innerHTML =
+        "Latitude: " +
+        position.coords.latitude +
+        "<br>Longitude: " +
+        position.coords.longitude;
       lat = position.coords.latitude;
       lon = position.coords.longitude;
       //lat = 45.42;
@@ -85,6 +82,12 @@
         getMap();
       }
     }
+
+    const watchID = navigator.geolocation.watchPosition(
+      showPosition,
+      error,
+      options
+    );
 
     function getMap() {
       map = L.map("map");

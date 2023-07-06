@@ -2,12 +2,6 @@
     "display_override": [
         "window-controls-overlay"
     ],
-    "protocol_handlers": [
-        {
-            "protocol": "mailto",
-            "url": "/newEmail?to=%s"
-        }
-    ],
     "name": "Verona Bike",
     "short_name": "Verona Bike",
     "start_url": "/index.html",
