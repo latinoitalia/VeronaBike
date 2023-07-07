@@ -111,34 +111,37 @@
         fillOpacity: 1,
         radius: 10,
       }).addTo(map);
-      // load GeoJSON from an external file
-      fetch("castagne.geojson")
-        .then((res) => res.json())
-        .then((data) => {
-          // add GeoJSON layer to the map once the file is loaded
-          L.geoJson(data).addTo(map);
-        });
-      fetch("garda.geojson")
-        .then((res) => res.json())
-        .then((data) => {
-          // add GeoJSON layer to the map once the file is loaded
-          L.geoJson(data, {
-            style: function (feature) {
-              return { color: "#00B050", weight: 10, opacity: 0.5 };
-            },
-          })
-            .addTo(map)
-            .on("mouseover", function (ev) {
-              this.setStyle({
-                opacity: 1, //or whatever style you wish to use;
-              });
+
+      if (false) {
+        // load GeoJSON from an external file
+        fetch("castagne.geojson")
+          .then((res) => res.json())
+          .then((data) => {
+            // add GeoJSON layer to the map once the file is loaded
+            L.geoJson(data).addTo(map);
+          });
+        fetch("garda.geojson")
+          .then((res) => res.json())
+          .then((data) => {
+            // add GeoJSON layer to the map once the file is loaded
+            L.geoJson(data, {
+              style: function (feature) {
+                return { color: "#00B050", weight: 10, opacity: 0.5 };
+              },
             })
-            .on("mouseout", function () {
-              this.setStyle({
-                opacity: 0.5, //or whatever style you wish to use;
+              .addTo(map)
+              .on("mouseover", function (ev) {
+                this.setStyle({
+                  opacity: 1, //or whatever style you wish to use;
+                });
+              })
+              .on("mouseout", function () {
+                this.setStyle({
+                  opacity: 0.5, //or whatever style you wish to use;
+                });
               });
-            });
-        });
+          });
+      }
       map.on("zoomend", function (e) {
         console.log(e.target._zoom);
         zoomlevel = e.target._zoom;
