@@ -112,14 +112,15 @@
         radius: 10,
       }).addTo(map);
 
+      fetch("bussolengo-pacengo.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data).addTo(map);
+        });
       if (false) {
         // load GeoJSON from an external file
-        fetch("castagne.geojson")
-          .then((res) => res.json())
-          .then((data) => {
-            // add GeoJSON layer to the map once the file is loaded
-            L.geoJson(data).addTo(map);
-          });
+
         fetch("garda.geojson")
           .then((res) => res.json())
           .then((data) => {
