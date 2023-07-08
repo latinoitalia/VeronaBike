@@ -37,3 +37,15 @@ main > h1 {
   }
 
   #map { height: 450px; }
+
+  .bl-div-icon{
+    background-color: darkmagenta;
+    color: #fff;
+    font-size: larger;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+
+  .bikesociallink{
+    padding-left: 10px;
+  }

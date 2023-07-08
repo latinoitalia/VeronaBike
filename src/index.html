@@ -45,6 +45,45 @@
 
       <div id="map"></div>
       <div id="demo"></div>
+      <h3>Google map</h3>
+      <iframe
+        src="https://www.google.com/maps/d/u/0/embed?mid=1-YNur1EyJzVb8_8NBTOuryR7UpG5aV0&ehbc=2E312F"
+        width="640"
+        height="480"
+      ></iframe>
+      <h3>Komoot</h3>
+      <iframe
+        src="https://www.komoot.com/it-it/tour/1203647576/embed"
+        width="640"
+        height="600"
+        frameborder="0"
+        scrolling="no"
+      ></iframe>
+      <h3>Wikiloc</h3>
+      <iframe
+        frameborder="0"
+        scrolling="no"
+        src="https://it.wikiloc.com/wikiloc/spatialArtifacts.do?event=view&id=139996061&measures=off&title=on&near=off&images=off&maptype=M"
+        width="640"
+        height="400"
+      ></iframe>
+      <div style="color: #777; font-size: 11px; line-height: 16px">
+        Powered by
+        <a
+          style="color: #06d; font-size: 11px; line-height: 16px"
+          target="_blank"
+          href="https://it.wikiloc.com"
+          >Wikiloc</a
+        >
+      </div>
+      <h3>RouteYou</h3>
+      <iframe
+        src="https://plugin.routeyou.com/routeviewer/free/?language=it&amp;params.route.id=13012746"
+        width="640"
+        height="600"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
 
       <!--div class=”responsive-map”> 
     <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/danielepaoloni/cli5rfbpb02mv01pr1aar52wf.html?title=false&access_token=pk.eyJ1IjoiZGFuaWVsZXBhb2xvbmkiLCJhIjoiY2xieHRocW5rMGx4aDNwcW94aGNjdW50aSJ9.1XXATkHEOUquGDzZaM4wUA&zoomwheel=false#8.98/45.4976/10.8982" title="Streets" style="border:none;"></iframe>
@@ -76,13 +115,15 @@
     }
 
     function showPosition(position) {
-      x.innerHTML =
-        "Latitude: " +
-        position.coords.latitude +
-        "<br>Longitude: " +
-        position.coords.longitude +
-        "<br>Zoom: " +
-        zoomlevel;
+      /* 
+        x.innerHTML =
+          "Latitude: " +
+          position.coords.latitude +
+          "<br>Longitude: " +
+          position.coords.longitude +
+          "<br>Zoom: " +
+          zoomlevel;
+     */
       lat = position.coords.latitude;
       lon = position.coords.longitude;
       //lat = 45.42;
@@ -121,37 +162,50 @@
         radius: 10,
       }).addTo(map);
 
-      fetch("bussolengo-pacengo.geojson")
+      /*   fetch("bussolengo-pacengo.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          L.geoJson(data).addTo(map);
+        }); */
+
+      // load GeoJSON from an external file
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "BVP",
+        iconSize: [40, 20],
+      });
+      L.marker([45.471, 10.77], { icon: blIcon }).addTo(map);
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "Gabanel<br>Bike Hostel",
+        iconSize: [90, 40],
+      });
+      L.marker([45.4705, 10.817], { icon: blIcon }).addTo(map);
+
+      fetch("bussolengo-lago.geojson")
         .then((res) => res.json())
         .then((data) => {
           // add GeoJSON layer to the map once the file is loaded
-          L.geoJson(data).addTo(map);
-        });
-      if (false) {
-        // load GeoJSON from an external file
-
-        fetch("garda.geojson")
-          .then((res) => res.json())
-          .then((data) => {
-            // add GeoJSON layer to the map once the file is loaded
-            L.geoJson(data, {
-              style: function (feature) {
-                return { color: "#00B050", weight: 10, opacity: 0.5 };
-              },
-            })
-              .addTo(map)
-              .on("mouseover", function (ev) {
-                this.setStyle({
-                  opacity: 1, //or whatever style you wish to use;
-                });
-              })
-              .on("mouseout", function () {
-                this.setStyle({
-                  opacity: 0.5, //or whatever style you wish to use;
-                });
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "#6c202c", weight: 10, opacity: 1 };
+            },
+          })
+            .addTo(map)
+            .bindTooltip("by Bike tra vigne e parchi")
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                opacity: 0.5, //or whatever style you wish to use;
               });
-          });
-      }
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                opacity: 1, //or whatever style you wish to use;
+              });
+            });
+        });
+
       map.on("zoomend", function (e) {
         console.log(e.target._zoom);
         zoomlevel = e.target._zoom;
