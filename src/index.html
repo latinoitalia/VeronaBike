@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="favicon.ico" />
+    <meta name="theme-color" content="#00A2E8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
@@ -17,13 +18,17 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
-    <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+    <script
+      src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"
+      crossorigin=""
+    ></script>
     <link
       href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css"
+      crossorigin=""
       rel="stylesheet"
     />
     <script>
-      navigator.serviceWorker.register("serviceworker.js");
+      //navigator.serviceWorker.register("serviceworker.js");
     </script>
     <title>Verona Bike</title>
   </head>
@@ -148,5 +153,23 @@
         zoomlevel = e.target._zoom;
       });
     }
+  </script>
+  <script>
+    // Don't register the service worker
+    // until the page has fully loaded
+    window.addEventListener("load", () => {
+      // Is service worker available?
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("serviceworker.js")
+          .then(() => {
+            console.log("Service worker registered!");
+          })
+          .catch((error) => {
+            console.warn("Error registering service worker:");
+            console.warn(error);
+          });
+      }
+    });
   </script>
 </html>
