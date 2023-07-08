@@ -10,8 +10,8 @@
     "description": "Bike Maps of Verona",
     "lang": " The default language of your application",
     "dir": "auto",
-    "theme_color": "#000000",
-    "background_color": "#000000",
+    "theme_color": "#00A2E8",
+    "background_color": "#00A2E8",
     "orientation": "any",
     "icons": [
         {
