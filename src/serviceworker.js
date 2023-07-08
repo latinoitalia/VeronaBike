@@ -55,6 +55,21 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(self.clients.claim());
 });
 
+const precachedAssets = [
+  "leaflet.css",
+  "leaflet.fullscreen.css",
+  "Leaflet.fullscreen.min.js",
+  "leaflet.js",
+];
+self.addEventListener("install", (event) => {
+  // Precache assets on install
+  event.waitUntil(
+    caches.open("leaflet-cache").then((cache) => {
+      return cache.addAll(precachedAssets);
+    })
+  );
+});
+
 /**
  *  @Functional Fetch
  *  All network requests are being intercepted here.
