@@ -55,7 +55,7 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(self.clients.claim());
 });
 
-const precachedAssets = [
+/* const precachedAssets = [
   "leaflet.css",
   "leaflet.fullscreen.css",
   "Leaflet.fullscreen.min.js",
@@ -68,7 +68,7 @@ self.addEventListener("install", (event) => {
       return cache.addAll(precachedAssets);
     })
   );
-});
+}); */
 
 /**
  *  @Functional Fetch
