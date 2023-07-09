@@ -51,10 +51,26 @@
       <h4 style="padding-left: 10px; color: #555">Raccolte</h4>
       <h3>Lago Di Garda</h3>
       <h2>
-        <a href="bike-tra-vigne-e-parchi-gabanel.html" target="_blank"
-          ><span style="font-size: 20px"
+        <a href="bike-tra-vigne-e-parchi-gabanel.html"
+          ><span style="font-size: 20; border-bottom: #6c202c 5px solid"
             >by Bike tra vigne e parchi Bussolengo, Gabanel bici Grill, Pacengo
             &#9654;</span
+          ></a
+        >
+      </h2>
+      <h2>
+        <a href="Ciclabile-29-Terre-di-Custoza.html"
+          ><span style="font-size: 20; border-bottom: #22b14c 5px solid"
+            >Ciclabile 29 Terre di Custoza, Bussolengo, Castelnuovo
+            &#9654;</span
+          ></a
+        >
+      </h2>
+      <h3>Verona EST</h3>
+      <h2>
+        <a href="verona-zevio-fiume-adige.html"
+          ><span style="font-size: 20; border-bottom: #ff7f27 5px solid"
+            >Verona Zevio, lungo il fiume Adige &#9654;</span
           ></a
         >
       </h2>
@@ -145,13 +161,26 @@
           L.geoJson(data).addTo(map);
         }); */
 
-      // load GeoJSON from an external file
-      /* var blIcon = L.divIcon({
+      var blIcon = L.divIcon({
         className: "bl-div-icon",
-        html: "BVP",
+        html: "29",
+        iconSize: [20, 20],
+      });
+      L.marker([45.466, 10.776], { icon: blIcon }).addTo(map);
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "VRZ",
         iconSize: [40, 20],
       });
-      L.marker([45.471, 10.77], { icon: blIcon }).addTo(map); */
+      L.marker([45.395, 11.035], { icon: blIcon }).addTo(map);
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "BVP",
+        iconSize: [35, 20],
+      });
+      L.marker([45.474, 10.756], { icon: blIcon }).addTo(map);
 
       // var blIcon = L.divIcon({
       //   className: "bl-div-icon",
@@ -159,6 +188,36 @@
       //   iconSize: [90, 40],
       // });
       // L.marker([45.4705, 10.817], { icon: blIcon }).addTo(map);
+
+      fetch("29.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "#22B14C", weight: 5, opacity: 1 };
+            },
+          })
+            .addTo(map)
+            .bindTooltip("Ciclabile 29 Terre di Custoza Bussolengo Castelnuovo")
+            .on("click", function (ev) {
+              event.preventDefault();
+              /*  window
+                .open("bike-tra-vigne-e-parchi-gabanel.html", "_blank")
+                .focus(); */
+              window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
+            })
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                weight: 10, //or whatever style you wish to use;
+              });
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                weight: 5, //or whatever style you wish to use;
+              });
+            });
+        });
 
       fetch("bussolengo-lago.geojson")
         .then((res) => res.json())
@@ -177,6 +236,36 @@
                 .open("bike-tra-vigne-e-parchi-gabanel.html", "_blank")
                 .focus(); */
               window.location.href = "bike-tra-vigne-e-parchi-gabanel.html";
+            })
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                weight: 10, //or whatever style you wish to use;
+              });
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                weight: 5, //or whatever style you wish to use;
+              });
+            });
+        });
+
+      fetch("vrzevio.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "#FF7F27", weight: 5, opacity: 1 };
+            },
+          })
+            .addTo(map)
+            .bindTooltip("Verona Zevio lungo il fiume Adige")
+            .on("click", function (ev) {
+              event.preventDefault();
+              /*  window
+                .open("bike-tra-vigne-e-parchi-gabanel.html", "_blank")
+                .focus(); */
+              window.location.href = "verona-zevio-fiume-adige.html";
             })
             .on("mouseover", function (ev) {
               this.setStyle({

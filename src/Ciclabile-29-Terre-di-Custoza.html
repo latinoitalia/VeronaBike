@@ -31,10 +31,10 @@
       rel="stylesheet"
     />
 
-    <title>Verona by Bike tra vigne e parchi Gabanel</title>
+    <title>Verona ciclabile 29 Terre di custoza</title>
     <meta
       name="description"
-      content="il percorso ciclabile della regione Veneto che da Bussolengo porta a Pacengo sul lago di Garda a Verona passando dal bici grill Gabanel"
+      content="il percorso ciclabile della regione Veneto che da Bussolengo porta a castelnuovo a Verona"
     />
   </head>
 
@@ -43,13 +43,11 @@
       <div id="map"></div>
       <div id="demo"></div>
       <h2 style="text-align: center">
-        <span style="border-bottom: #6c202c 5px solid"
-          >By bike tra vigne e parchi</span
+        <span style="border-bottom: #22b14c 5px solid"
+          >Ciclabile 29 Terre di Custoza</span
         >
       </h2>
-      <h3 style="text-align: center">
-        Bussolengo, Gabanel bici Grill, Pacengo, lago di Garda
-      </h3>
+      <h3 style="text-align: center">Bussolengo, Sandrà, Castelnuovo</h3>
       <h3>
         <h3>
           <a href="index.html"
@@ -60,16 +58,16 @@
           >
         </h3>
       </h3>
-      <h3>
+      <!--  <h3>
         <a href=" https://youtu.be/OrTfywT4eFo" target="_blank"
           ><img src="icons8-youtube-48.png" class="komootsvg" /><span
             style="font-size: 20px"
             >Video youtube &#9654;</span
           ></a
         >
-      </h3>
+      </h3> -->
       <h2>show tour in</h2>
-      <h3>
+      <!--  <h3>
         <a
           href="https://www.google.com/maps/d/u/0/edit?mid=1-YNur1EyJzVb8_8NBTOuryR7UpG5aV0&usp=sharing"
           target="_blank"
@@ -77,10 +75,10 @@
             >Google maps &#9654;</span
           ></a
         >
-      </h3>
+      </h3> -->
       <h3>
         <a
-          href="https://www.komoot.com/it-it/tour/1203647576?ref=wtd"
+          href="https://www.komoot.com/it-it/tour/1205339619?ref=wtd"
           target="_blank"
           ><img class="komootsvg" src="komoot.svg" /><span
             style="font-size: 20px"
@@ -88,7 +86,7 @@
           ></a
         >
       </h3>
-      <h3>
+      <!--   <h3>
         <a
           href="https://it.wikiloc.com/percorsi-bicicletta-da-turismo/by-bike-tra-vigne-e-parchi-gabanel-bike-hostel-139996061#lb-embed"
           target="_blank"
@@ -97,8 +95,8 @@
             >Wikiloc &#9654;</span
           ></a
         >
-      </h3>
-      <h3>
+      </h3> -->
+      <!--    <h3>
         <a
           href="https://www.bikemap.net/en/r/13200313/#11.65/45.4712/10.7838"
           target="_blank"
@@ -126,7 +124,7 @@
             >Relive &#9654;</span
           ></a
         >
-      </h3>
+      </h3> -->
     </main>
   </body>
   <script>
@@ -205,7 +203,7 @@
           L.geoJson(data).addTo(map);
         }); */
 
-      // load GeoJSON from an external file
+      /*  // load GeoJSON from an external file
       var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "BVP",
@@ -218,19 +216,26 @@
         html: "Gabanel<br>Bike Hostel",
         iconSize: [90, 40],
       });
-      L.marker([45.4705, 10.817], { icon: blIcon }).addTo(map);
+      L.marker([45.4705, 10.817], { icon: blIcon }).addTo(map); */
 
-      fetch("bussolengo-lago.geojson")
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "29",
+        iconSize: [20, 20],
+      });
+      L.marker([45.466, 10.776], { icon: blIcon }).addTo(map);
+
+      fetch("29.geojson")
         .then((res) => res.json())
         .then((data) => {
           // add GeoJSON layer to the map once the file is loaded
           L.geoJson(data, {
             style: function (feature) {
-              return { color: "#6c202c", weight: 8, opacity: 1 };
+              return { color: "#22B14C", weight: 8, opacity: 1 };
             },
           })
             .addTo(map)
-            .bindTooltip("by Bike tra vigne e parchi");
+            .bindTooltip("Ciclabile 29 Terre di Custoza");
         });
 
       map.on("zoomend", function (e) {
