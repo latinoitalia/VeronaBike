@@ -201,6 +201,18 @@
         radius: 10,
       }).addTo(map);
 
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "RA",
+        iconSize: [25, 20],
+      });
+      L.marker([45.574, 10.804], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "eurovelo7-rivoli-affi.html";
+        });
+
       /*   fetch("bussolengo-pacengo.geojson")
         .then((res) => res.json())
         .then((data) => {

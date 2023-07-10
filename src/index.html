@@ -183,35 +183,60 @@
         html: "29",
         iconSize: [20, 20],
       });
-      L.marker([45.466, 10.776], { icon: blIcon }).addTo(map);
+      L.marker([45.466, 10.776], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
+        });
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "VRZ",
         iconSize: [40, 20],
       });
-      L.marker([45.395, 11.035], { icon: blIcon }).addTo(map);
+      L.marker([45.395, 11.035], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "verona-zevio-fiume-adige.html";
+        });
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "BVP",
         iconSize: [35, 20],
       });
-      L.marker([45.474, 10.756], { icon: blIcon }).addTo(map);
+      L.marker([45.474, 10.756], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "bike-tra-vigne-e-parchi-gabanel.html";
+        });
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "CAM",
         iconSize: [40, 20],
       });
-      L.marker([45.459, 10.945], { icon: blIcon }).addTo(map);
+      L.marker([45.459, 10.945], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "ciclabile-verona-camuzzoni.html";
+        });
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "RA",
         iconSize: [25, 20],
       });
-      L.marker([45.574, 10.804], { icon: blIcon }).addTo(map);
+      L.marker([45.574, 10.804], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "eurovelo7-rivoli-affi.html";
+        });
 
       // var blIcon = L.divIcon({
       //   className: "bl-div-icon",
@@ -233,9 +258,6 @@
             .bindTooltip("Ciclabile 29 Terre di Custoza Bussolengo Castelnuovo")
             .on("click", function (ev) {
               event.preventDefault();
-              /*  window
-                .open("bike-tra-vigne-e-parchi-gabanel.html", "_blank")
-                .focus(); */
               window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
             })
             .on("mouseover", function (ev) {
@@ -263,9 +285,6 @@
             .bindTooltip("by Bike tra vigne e parchi")
             .on("click", function (ev) {
               event.preventDefault();
-              /*  window
-                .open("bike-tra-vigne-e-parchi-gabanel.html", "_blank")
-                .focus(); */
               window.location.href = "bike-tra-vigne-e-parchi-gabanel.html";
             })
             .on("mouseover", function (ev) {
@@ -293,9 +312,6 @@
             .bindTooltip("Verona Zevio lungo il fiume Adige")
             .on("click", function (ev) {
               event.preventDefault();
-              /*  window
-                .open("bike-tra-vigne-e-parchi-gabanel.html", "_blank")
-                .focus(); */
               window.location.href = "verona-zevio-fiume-adige.html";
             })
             .on("mouseover", function (ev) {
@@ -323,9 +339,6 @@
             .bindTooltip("Ecomuseo dell'energia pulita")
             .on("click", function (ev) {
               event.preventDefault();
-              /*  window
-                .open("bike-tra-vigne-e-parchi-gabanel.html", "_blank")
-                .focus(); */
               window.location.href = "ciclabile-verona-camuzzoni.html";
             })
             .on("mouseover", function (ev) {
@@ -352,9 +365,6 @@
             .bindTooltip("Eurovelo 7 Rivoli Affi")
             .on("click", function (ev) {
               event.preventDefault();
-              /*  window
-                .open("bike-tra-vigne-e-parchi-gabanel.html", "_blank")
-                .focus(); */
               window.location.href = "eurovelo7-rivoli-affi.html";
             })
             .on("mouseover", function (ev) {

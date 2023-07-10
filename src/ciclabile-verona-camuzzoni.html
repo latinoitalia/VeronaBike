@@ -202,6 +202,18 @@
         radius: 10,
       }).addTo(map);
 
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "CAM",
+        iconSize: [40, 20],
+      });
+      L.marker([45.459, 10.945], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "ciclabile-verona-camuzzoni.html";
+        });
+
       /*   fetch("bussolengo-pacengo.geojson")
         .then((res) => res.json())
         .then((data) => {
