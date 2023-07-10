@@ -12,7 +12,14 @@
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <!--  <link href="css/styles.css" rel="stylesheet" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#00A2E8" />
     <link
@@ -37,35 +44,22 @@
       crossorigin=""
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
   </head>
   <body>
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Verona Bike</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-          </ul>
-        </div>
+        <a class="navbar-brand" href="index.html">Verona Bike</a>
       </div>
     </nav>
     <!-- Page content-->
     <div class="container">
-      <div class="mt-5">
+      <div class="mt-3">
         <main>
           <!--div class=”responsive-map”> 
                   <iframe src="https://www.google.com/maps/d/u/0/embed?mid=15-Oy9nbJDqOYxRoh3gnH8AGUhdizp7o&ehbc=2E312F" width="100%" height="450"></iframe>
@@ -74,54 +68,76 @@
           <div id="map"></div>
           <div id="demo"></div>
           <h2 style="text-align: center">Verona Bike home</h2>
-          <h3 style="text-align: center">
-            Solo piste ciclabili officiali della provincia di Verona
-          </h3>
+          <h4 style="text-align: center">
+            Solo piste ciclabili ufficiali della provincia di Verona
+          </h4>
           <h4 style="padding-left: 10px; color: #555">Raccolte</h4>
           <h3>Lago Di Garda</h3>
           <a href="bike-tra-vigne-e-parchi-gabanel.html"
             ><span style="background-color: #6c202c">&nbsp;&nbsp;&nbsp;</span
             >&nbsp;<span
               >by Bike tra vigne e parchi Bussolengo, Gabanel bici Grill,
-              Pacengo, 13Km, dislivello 150m (BVP) &#9654;</span
+              Pacengo, 13Km, dislivello 150m<span
+                style="background-color: darkmagenta; color: white"
+                >&nbspBVP&nbsp;</span
+              >
+              <i class="bi bi-arrow-right-square"></i></span
             ><br
           /></a>
           <a href="Ciclabile-29-Terre-di-Custoza.html"
             ><span style="background-color: #22b14c">&nbsp;&nbsp;&nbsp;</span
             >&nbsp;<span
               >Ciclabile 29 Terre di Custoza, Bussolengo, Castelnuovo, 18Km,
-              dislivello 170m (29) &#9654;</span
-            ></a
+              dislivello 170m<span
+                style="background-color: darkmagenta; color: white"
+                >&nbsp29&nbsp;</span
+              >
+              <i class="bi bi-arrow-right-square"></i></span></a
           ><br />
           <a href="eurovelo7-rivoli-affi.html">
             <span style="background-color: #a349a4">&nbsp;&nbsp;&nbsp;</span
             >&nbsp;
             <span
-              >Eurovelo 7 da Rivoli ad Affi 5Km, dislivello 70m (RA)
-              &#9654;</span
-            ></a
-          >
+              >Eurovelo 7 da Rivoli ad Affi 5Km, dislivello 70m<span
+                style="background-color: darkmagenta; color: white"
+                >&nbspRA&nbsp;</span
+              >
+              <i class="bi bi-arrow-right-square"></i></span
+          ></a>
           <h3 class="mt-2">Verona EST</h3>
           <a href="verona-zevio-fiume-adige.html">
             <span style="background-color: #ff7f27">&nbsp;&nbsp;&nbsp;</span
             >&nbsp;<span
-              >Verona Zevio, lungo il fiume Adige, 19Km, dislivello 40m (VRZ)
-              &#9654;</span
-            ></a
-          >
+              >Verona Zevio, lungo il fiume Adige, 19Km, dislivello 40m<span
+                style="background-color: darkmagenta; color: white"
+                >&nbspVRZ&nbsp;</span
+              >
+              <i class="bi bi-arrow-right-square"></i></span
+          ></a>
           <h3 class="mt-2">Verona Bicipolitana</h3>
           <a href="ciclabile-verona-camuzzoni.html">
             <span style="background-color: #00a2e8">&nbsp;&nbsp;&nbsp;</span
             >&nbsp;<span>
               Verona canale camuzzoni diga Chievo porta Palio ECOMUSEO
-              DELL'ENERGIA PULITA, 4km, dislivello 10m (CAM) &#9654;</span
-            ></a
-          >
+              DELL'ENERGIA PULITA, 4km, dislivello 10m<span
+                style="background-color: darkmagenta; color: white"
+                >&nbspCAM&nbsp;</span
+              >
+              <i class="bi bi-arrow-right-square"></i></span
+          ></a>
+          <br />
+          <br />
         </main>
       </div>
     </div>
     <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!--   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+   -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
   </body>
@@ -213,7 +229,7 @@
       var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "29",
-        iconSize: [20, 20],
+        iconSize: [25, 20],
       });
       L.marker([45.466, 10.776], { icon: blIcon })
         .addTo(map)
@@ -237,7 +253,7 @@
       var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "BVP",
-        iconSize: [35, 20],
+        iconSize: [38, 20],
       });
       L.marker([45.474, 10.756], { icon: blIcon })
         .addTo(map)
@@ -249,7 +265,7 @@
       var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "CAM",
-        iconSize: [40, 20],
+        iconSize: [43, 20],
       });
       L.marker([45.459, 10.945], { icon: blIcon })
         .addTo(map)
@@ -261,7 +277,7 @@
       var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "RA",
-        iconSize: [25, 20],
+        iconSize: [30, 20],
       });
       L.marker([45.574, 10.804], { icon: blIcon })
         .addTo(map)
