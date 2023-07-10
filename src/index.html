@@ -115,7 +115,17 @@
               <i class="bi bi-arrow-right-square"></i></span
           ></a>
           <h3 class="mt-2">Verona Bicipolitana</h3>
-          <a href="ciclabile-verona-camuzzoni.html">
+          <a href="verona-bicipolitana.html">
+            <span style="background-color: #22B14C">&nbsp;&nbsp;&nbsp;</span
+            >&nbsp;<span>
+              Verona&nbsp;</span
+              ><span
+              style="background-color: darkmagenta; color: white"
+              >&nbspbicipolitana&nbsp;</span
+            >
+              <i class="bi bi-arrow-right-square"></i></span
+          ></a>
+         <!--  <a href="ciclabile-verona-camuzzoni.html">
             <span style="background-color: #00a2e8">&nbsp;&nbsp;&nbsp;</span
             >&nbsp;<span>
               Verona canale camuzzoni diga Chievo porta Palio ECOMUSEO
@@ -124,7 +134,7 @@
                 >&nbspCAM&nbsp;</span
               >
               <i class="bi bi-arrow-right-square"></i></span
-          ></a>
+          ></a> -->
           <br />
           <br />
         </main>
@@ -176,29 +186,29 @@
           "<br>Zoom: " +
           zoomlevel;
      */
-      lat = position.coords.latitude;
-      lon = position.coords.longitude;
-      //lat = 45.42;
-      //lon = 10.98;
+      //lat = position.coords.latitude;
+      //lon = position.coords.longitude;
+      lat = 45.42;
+      lon = 10.98;
       if (map != undefined) {
         map.setView([lat, lon], zoomlevel, { animation: true });
-        circle.setLatLng([lat, lon]);
+        //circle.setLatLng([lat, lon]);
       } else {
         getMap();
       }
     }
-
+    const watchID = showPosition();
     /*   const watchID = navigator.geolocation.watchPosition(
       showPosition,
       error,
       options
     ); */
 
-    const watchID = navigator.geolocation.getCurrentPosition(
+    /* const watchID = navigator.geolocation.getCurrentPosition(
       showPosition,
       error,
       options
-    );
+    ); */
 
     function getMap() {
       map = L.map("map");
@@ -213,12 +223,12 @@
             '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }
       ).addTo(map);
-      circle = L.circleMarker([lat, lon], {
+      /* circle = L.circleMarker([lat, lon], {
         color: "blue",
         fillColor: "#00f",
         fillOpacity: 1,
         radius: 10,
-      }).addTo(map);
+      }).addTo(map); */
 
       /*   fetch("bussolengo-pacengo.geojson")
         .then((res) => res.json())
@@ -241,7 +251,7 @@
       var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "VRZ",
-        iconSize: [40, 20],
+        iconSize: [37, 20],
       });
       L.marker([45.395, 11.035], { icon: blIcon })
         .addTo(map)
@@ -253,7 +263,7 @@
       var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "BVP",
-        iconSize: [38, 20],
+        iconSize: [35, 20],
       });
       L.marker([45.474, 10.756], { icon: blIcon })
         .addTo(map)
@@ -264,14 +274,14 @@
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
-        html: "CAM",
-        iconSize: [43, 20],
+        html: "bicipolitana",
+        iconSize: [70, 20],
       });
       L.marker([45.459, 10.945], { icon: blIcon })
         .addTo(map)
         .on("click", function (ev) {
           event.preventDefault();
-          window.location.href = "ciclabile-verona-camuzzoni.html";
+          window.location.href = "verona-bicipolitana.html";
         });
 
       var blIcon = L.divIcon({
@@ -374,20 +384,20 @@
             });
         });
 
-      fetch("camuzzoni.geojson")
+      fetch("vr.geojson")
         .then((res) => res.json())
         .then((data) => {
           // add GeoJSON layer to the map once the file is loaded
           L.geoJson(data, {
             style: function (feature) {
-              return { color: "#00A2E8", weight: 5, opacity: 1 };
+              return { color: "#22b14c", weight: 5, opacity: 1 };
             },
           })
             .addTo(map)
-            .bindTooltip("Ecomuseo dell'energia pulita")
+            .bindTooltip("Bicipolitana")
             .on("click", function (ev) {
               event.preventDefault();
-              window.location.href = "ciclabile-verona-camuzzoni.html";
+              window.location.href = "verona-bicipolitana.html";
             })
             .on("mouseover", function (ev) {
               this.setStyle({
