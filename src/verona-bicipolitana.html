@@ -198,12 +198,6 @@
             '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }
       ).addTo(map);
-      circle = L.circleMarker([lat, lon], {
-        color: "blue",
-        fillColor: "#00f",
-        fillOpacity: 1,
-        radius: 10,
-      }).addTo(map);
 
       /*   fetch("bussolengo-pacengo.geojson")
         .then((res) => res.json())
@@ -212,13 +206,7 @@
         }); */
 
       // load GeoJSON from an external file
-      /*   var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "BVP",
-        iconSize: [40, 20],
-      });
-      L.marker([45.471, 10.77], { icon: blIcon }).addTo(map);
- */
+
       /*    var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "Gabanel<br>Bike Hostel",
@@ -243,6 +231,82 @@
         console.log(e.target._zoom);
         zoomlevel = e.target._zoom;
       });
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "Avesa",
+        iconSize: [43, 20],
+      });
+      L.marker([45.4661, 10.98873], { icon: blIcon }).addTo(map);
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "Stazione",
+        iconSize: [60, 20],
+      });
+      L.marker([45.42938, 10.98], { icon: blIcon }).addTo(map);
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "Montorio",
+        iconSize: [60, 20],
+      });
+      L.marker([45.45814, 11.06366], { icon: blIcon }).addTo(map);
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "Piazza Bra",
+        iconSize: [80, 20],
+      });
+      L.marker([45.439, 10.995], { icon: blIcon }).addTo(map);
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "UniVR",
+        iconSize: [50, 20],
+      });
+      L.marker([45.40374, 10.99744], { icon: blIcon }).addTo(map);
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "Palazzina",
+        iconSize: [70, 20],
+      });
+      L.marker([45.40306, 11.01505], { icon: blIcon }).addTo(map);
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "Ex ferrovia",
+        iconSize: [70, 20],
+      });
+      L.marker([45.41462, 10.95131], { icon: blIcon }).addTo(map);
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "Chievo",
+        iconSize: [50, 20],
+      });
+      L.marker([45.45754, 10.9462], { icon: blIcon }).addTo(map);
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "San Massimo",
+        iconSize: [80, 20],
+      });
+      L.marker([45.43907, 10.9473], { icon: blIcon }).addTo(map);
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "Saval",
+        iconSize: [50, 20],
+      });
+      L.marker([45.45352, 10.96052], { icon: blIcon }).addTo(map);
+
+      circle = L.circleMarker([lat, lon], {
+        color: "blue",
+        fillColor: "#00f",
+        fillOpacity: 1,
+        radius: 10,
+      }).addTo(map);
     }
   </script>
   <script>

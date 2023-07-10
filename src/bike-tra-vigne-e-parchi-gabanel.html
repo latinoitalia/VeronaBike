@@ -198,12 +198,6 @@
             '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }
       ).addTo(map);
-      circle = L.circleMarker([lat, lon], {
-        color: "blue",
-        fillColor: "#00f",
-        fillOpacity: 1,
-        radius: 10,
-      }).addTo(map);
 
       /*   fetch("bussolengo-pacengo.geojson")
         .then((res) => res.json())
@@ -243,6 +237,12 @@
         console.log(e.target._zoom);
         zoomlevel = e.target._zoom;
       });
+      circle = L.circleMarker([lat, lon], {
+        color: "blue",
+        fillColor: "#00f",
+        fillOpacity: 1,
+        radius: 10,
+      }).addTo(map);
     }
   </script>
   <script>

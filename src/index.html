@@ -186,10 +186,10 @@
           "<br>Zoom: " +
           zoomlevel;
      */
-      //lat = position.coords.latitude;
-      //lon = position.coords.longitude;
-      lat = 45.42;
-      lon = 10.98;
+      lat = position.coords.latitude;
+      lon = position.coords.longitude;
+      //lat = 45.42;
+      //lon = 10.98;
       if (map != undefined) {
         map.setView([lat, lon], zoomlevel, { animation: true });
         //circle.setLatLng([lat, lon]);
@@ -197,18 +197,18 @@
         getMap();
       }
     }
-    const watchID = showPosition();
+   // const watchID = showPosition();
     /*   const watchID = navigator.geolocation.watchPosition(
       showPosition,
       error,
       options
     ); */
 
-    /* const watchID = navigator.geolocation.getCurrentPosition(
+    const watchID = navigator.geolocation.getCurrentPosition(
       showPosition,
       error,
       options
-    ); */
+    );
 
     function getMap() {
       map = L.map("map");
@@ -223,12 +223,7 @@
             '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }
       ).addTo(map);
-      /* circle = L.circleMarker([lat, lon], {
-        color: "blue",
-        fillColor: "#00f",
-        fillOpacity: 1,
-        radius: 10,
-      }).addTo(map); */
+     
 
       /*   fetch("bussolengo-pacengo.geojson")
         .then((res) => res.json())
@@ -441,6 +436,13 @@
         console.log(e.target._zoom);
         zoomlevel = e.target._zoom;
       });
+
+       circle = L.circleMarker([lat, lon], {
+        color: "gray",
+        fillColor: "gray",
+        fillOpacity: 1,
+        radius: 10,
+      }).addTo(map);
     }
   </script>
   <script>
