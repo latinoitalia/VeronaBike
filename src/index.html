@@ -53,16 +53,23 @@
       <h2>
         <a href="bike-tra-vigne-e-parchi-gabanel.html"
           ><span style="font-size: 20; border-bottom: #6c202c 5px solid"
-            >by Bike tra vigne e parchi Bussolengo, Gabanel bici Grill, Pacengo
-            &#9654;</span
+            >by Bike tra vigne e parchi Bussolengo, Gabanel bici Grill, Pacengo,
+            13Km, dislivello 150m (BVP) &#9654;</span
           ></a
         >
       </h2>
       <h2>
         <a href="Ciclabile-29-Terre-di-Custoza.html"
           ><span style="font-size: 20; border-bottom: #22b14c 5px solid"
-            >Ciclabile 29 Terre di Custoza, Bussolengo, Castelnuovo
-            &#9654;</span
+            >Ciclabile 29 Terre di Custoza, Bussolengo, Castelnuovo, 18Km,
+            dislivello 170m (29) &#9654;</span
+          ></a
+        >
+      </h2>
+      <h2>
+        <a href="eurovelo7-rivoli-affi.html"
+          ><span style="font-size: 20; border-bottom: #a349a4 5px solid"
+            >Eurovelo 7 da Rivoli ad Affi 5Km, dislivello 70m (RA) &#9654;</span
           ></a
         >
       </h2>
@@ -70,7 +77,17 @@
       <h2>
         <a href="verona-zevio-fiume-adige.html"
           ><span style="font-size: 20; border-bottom: #ff7f27 5px solid"
-            >Verona Zevio, lungo il fiume Adige &#9654;</span
+            >Verona Zevio, lungo il fiume Adige, 19Km, dislivello 40m (VRZ)
+            &#9654;</span
+          ></a
+        >
+      </h2>
+      <h3>Verona Bicipolitana</h3>
+      <h2>
+        <a href="ciclabile-verona-camuzzoni.html"
+          ><span style="font-size: 20; border-bottom: #00a2e8 5px solid">
+            Verona canale camuzzoni diga Chievo porta Palio ECOMUSEO
+            DELL'ENERGIA PULITA, 4km, dislivello 10m (CAM) &#9654;</span
           ></a
         >
       </h2>
@@ -82,7 +99,7 @@
     var lon;
     var map;
     var circle;
-    var zoomlevel = 13;
+    var zoomlevel = 11;
     var myStyle = {
       // Define your style object
       color: "#ff0000",
@@ -182,6 +199,20 @@
       });
       L.marker([45.474, 10.756], { icon: blIcon }).addTo(map);
 
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "CAM",
+        iconSize: [40, 20],
+      });
+      L.marker([45.459, 10.945], { icon: blIcon }).addTo(map);
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "RA",
+        iconSize: [25, 20],
+      });
+      L.marker([45.574, 10.804], { icon: blIcon }).addTo(map);
+
       // var blIcon = L.divIcon({
       //   className: "bl-div-icon",
       //   html: "Gabanel<br>Bike Hostel",
@@ -266,6 +297,65 @@
                 .open("bike-tra-vigne-e-parchi-gabanel.html", "_blank")
                 .focus(); */
               window.location.href = "verona-zevio-fiume-adige.html";
+            })
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                weight: 10, //or whatever style you wish to use;
+              });
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                weight: 5, //or whatever style you wish to use;
+              });
+            });
+        });
+
+      fetch("camuzzoni.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "#00A2E8", weight: 5, opacity: 1 };
+            },
+          })
+            .addTo(map)
+            .bindTooltip("Ecomuseo dell'energia pulita")
+            .on("click", function (ev) {
+              event.preventDefault();
+              /*  window
+                .open("bike-tra-vigne-e-parchi-gabanel.html", "_blank")
+                .focus(); */
+              window.location.href = "ciclabile-verona-camuzzoni.html";
+            })
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                weight: 10, //or whatever style you wish to use;
+              });
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                weight: 5, //or whatever style you wish to use;
+              });
+            });
+        });
+      fetch("rivoliaffi.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "#A349A4", weight: 5, opacity: 1 };
+            },
+          })
+            .addTo(map)
+            .bindTooltip("Eurovelo 7 Rivoli Affi")
+            .on("click", function (ev) {
+              event.preventDefault();
+              /*  window
+                .open("bike-tra-vigne-e-parchi-gabanel.html", "_blank")
+                .focus(); */
+              window.location.href = "eurovelo7-rivoli-affi.html";
             })
             .on("mouseover", function (ev) {
               this.setStyle({

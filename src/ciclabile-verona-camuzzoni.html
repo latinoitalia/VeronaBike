@@ -31,10 +31,10 @@
       rel="stylesheet"
     />
 
-    <title>Verona ciclabile 29 Terre di custoza</title>
+    <title>Verona Ecomuseo dell'energia pulita</title>
     <meta
       name="description"
-      content="il percorso ciclabile della regione Veneto che da Bussolengo porta a castelnuovo a Verona"
+      content="il percorso ciclabile della bicipolitana di Verona dell'ecomuseo dell'energia pulita lungo il canale Camuzzoni"
     />
   </head>
 
@@ -43,12 +43,13 @@
       <div id="map"></div>
       <div id="demo"></div>
       <h2 style="text-align: center">
-        <span style="border-bottom: #22b14c 5px solid"
-          >Ciclabile 29 Terre di Custoza</span
+        <span style="border-bottom: #00a2e8 5px solid"
+          >Verona canale camuzzoni</span
         >
       </h2>
       <h3 style="text-align: center">
-        Bussolengo, Sandrà, Castelnuovo, 18Km, dislivello 170m
+        Verona canale camuzzoni diga Chievo porta Palio ECOMUSEO DELL'ENERGIA
+        PULITA, 4km, dislivello 10m
       </h3>
       <h3>
         <h3>
@@ -60,16 +61,18 @@
           >
         </h3>
       </h3>
-      <!--  <h3>
-        <a href=" https://youtu.be/OrTfywT4eFo" target="_blank"
+      <h3>
+        <a
+          href="https://www.youtube.com/watch?v=skg_Wwkl2hU&t=25s"
+          target="_blank"
           ><img src="icons8-youtube-48.png" class="komootsvg" /><span
             style="font-size: 20px"
             >Video youtube &#9654;</span
           ></a
         >
-      </h3> -->
+      </h3>
       <h2>show tour in</h2>
-      <!--  <h3>
+      <!--    <h3>
         <a
           href="https://www.google.com/maps/d/u/0/edit?mid=1-YNur1EyJzVb8_8NBTOuryR7UpG5aV0&usp=sharing"
           target="_blank"
@@ -80,7 +83,7 @@
       </h3> -->
       <h3>
         <a
-          href="https://www.komoot.com/it-it/tour/1205339619?ref=wtd"
+          href="https://www.komoot.com/it-it/tour/997268240?ref=wtd&share_token=aqWHgcTUZ7xYKUq46MesUaXN1qnkMD3hortOKxSXb3bfB1dX1x"
           target="_blank"
           ><img class="komootsvg" src="komoot.svg" /><span
             style="font-size: 20px"
@@ -97,8 +100,8 @@
             >Wikiloc &#9654;</span
           ></a
         >
-      </h3> -->
-      <!--    <h3>
+      </h3>
+      <h3>
         <a
           href="https://www.bikemap.net/en/r/13200313/#11.65/45.4712/10.7838"
           target="_blank"
@@ -205,39 +208,32 @@
           L.geoJson(data).addTo(map);
         }); */
 
-      /*  // load GeoJSON from an external file
-      var blIcon = L.divIcon({
+      // load GeoJSON from an external file
+      /* var blIcon = L.divIcon({
         className: "bl-div-icon",
-        html: "BVP",
+        html: "VRZ",
         iconSize: [40, 20],
-      });
-      L.marker([45.471, 10.77], { icon: blIcon }).addTo(map);
+      }); */
+      //L.marker([45.395, 11.035], { icon: blIcon }).addTo(map);
 
-      var blIcon = L.divIcon({
+      /*  var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "Gabanel<br>Bike Hostel",
         iconSize: [90, 40],
       });
-      L.marker([45.4705, 10.817], { icon: blIcon }).addTo(map); */
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "29",
-        iconSize: [20, 20],
-      });
-      L.marker([45.466, 10.776], { icon: blIcon }).addTo(map);
-
-      fetch("29.geojson")
+      L.marker([45.4705, 10.817], { icon: blIcon }).addTo(map);
+ */
+      fetch("camuzzoni.geojson")
         .then((res) => res.json())
         .then((data) => {
           // add GeoJSON layer to the map once the file is loaded
           L.geoJson(data, {
             style: function (feature) {
-              return { color: "#22B14C", weight: 8, opacity: 1 };
+              return { color: "#00A2E8", weight: 8, opacity: 1 };
             },
           })
             .addTo(map)
-            .bindTooltip("Ciclabile 29 Terre di Custoza");
+            .bindTooltip("Camuzzoni Ecomuseo dell'energia pulita");
         });
 
       map.on("zoomend", function (e) {
