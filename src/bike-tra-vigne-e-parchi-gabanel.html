@@ -141,7 +141,7 @@
     var lon;
     var map;
     var circle;
-    var zoomlevel = 11;
+    var zoomlevel = 13;
     var myStyle = {
       // Define your style object
       color: "#ff0000",
@@ -154,10 +154,7 @@
     };
 
     function error(error) {
-      //x.innerHTML = "errore: " + error;
-      console.log("no position detected");
-      lat = 45.42;
-      lon = 10.98;
+      x.innerHTML = "errore: " + error;
     }
 
     function showPosition(position) {
@@ -182,13 +179,7 @@
       }
     }
 
-    /*   const watchID = navigator.geolocation.watchPosition(
-      showPosition,
-      error,
-      options
-    ); */
-
-    const watchID = navigator.geolocation.getCurrentPosition(
+    const watchID = navigator.geolocation.watchPosition(
       showPosition,
       error,
       options
@@ -220,99 +211,20 @@
           L.geoJson(data).addTo(map);
         }); */
 
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "29",
-        iconSize: [25, 20],
-      });
-      L.marker([45.466, 10.776], { icon: blIcon })
-        .addTo(map)
-        .on("click", function (ev) {
-          event.preventDefault();
-          window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
-        });
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "VRZ",
-        iconSize: [40, 20],
-      });
-      L.marker([45.395, 11.035], { icon: blIcon })
-        .addTo(map)
-        .on("click", function (ev) {
-          event.preventDefault();
-          window.location.href = "verona-zevio-fiume-adige.html";
-        });
-
+      // load GeoJSON from an external file
       var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "BVP",
-        iconSize: [38, 20],
+        iconSize: [40, 20],
       });
-      L.marker([45.474, 10.756], { icon: blIcon })
-        .addTo(map)
-        .on("click", function (ev) {
-          event.preventDefault();
-          window.location.href = "bike-tra-vigne-e-parchi-gabanel.html";
-        });
+      L.marker([45.471, 10.77], { icon: blIcon }).addTo(map);
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
-        html: "CAM",
-        iconSize: [43, 20],
+        html: "Gabanel<br>Bike Hostel",
+        iconSize: [90, 40],
       });
-      L.marker([45.459, 10.945], { icon: blIcon })
-        .addTo(map)
-        .on("click", function (ev) {
-          event.preventDefault();
-          window.location.href = "ciclabile-verona-camuzzoni.html";
-        });
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "RA",
-        iconSize: [30, 20],
-      });
-      L.marker([45.574, 10.804], { icon: blIcon })
-        .addTo(map)
-        .on("click", function (ev) {
-          event.preventDefault();
-          window.location.href = "eurovelo7-rivoli-affi.html";
-        });
-
-      // var blIcon = L.divIcon({
-      //   className: "bl-div-icon",
-      //   html: "Gabanel<br>Bike Hostel",
-      //   iconSize: [90, 40],
-      // });
-      // L.marker([45.4705, 10.817], { icon: blIcon }).addTo(map);
-
-      fetch("29.geojson")
-        .then((res) => res.json())
-        .then((data) => {
-          // add GeoJSON layer to the map once the file is loaded
-          L.geoJson(data, {
-            style: function (feature) {
-              return { color: "#22B14C", weight: 5, opacity: 1 };
-            },
-          })
-            .addTo(map)
-            .bindTooltip("Ciclabile 29 Terre di Custoza Bussolengo Castelnuovo")
-            .on("click", function (ev) {
-              event.preventDefault();
-              window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
-            })
-            .on("mouseover", function (ev) {
-              this.setStyle({
-                weight: 10, //or whatever style you wish to use;
-              });
-            })
-            .on("mouseout", function () {
-              this.setStyle({
-                weight: 5, //or whatever style you wish to use;
-              });
-            });
-        });
+      L.marker([45.4705, 10.817], { icon: blIcon }).addTo(map);
 
       fetch("bussolengo-lago.geojson")
         .then((res) => res.json())
@@ -320,105 +232,11 @@
           // add GeoJSON layer to the map once the file is loaded
           L.geoJson(data, {
             style: function (feature) {
-              return { color: "#6c202c", weight: 5, opacity: 1 };
+              return { color: "#6c202c", weight: 8, opacity: 1 };
             },
           })
             .addTo(map)
-            .bindTooltip("by Bike tra vigne e parchi")
-            .on("click", function (ev) {
-              event.preventDefault();
-              window.location.href = "bike-tra-vigne-e-parchi-gabanel.html";
-            })
-            .on("mouseover", function (ev) {
-              this.setStyle({
-                weight: 10, //or whatever style you wish to use;
-              });
-            })
-            .on("mouseout", function () {
-              this.setStyle({
-                weight: 5, //or whatever style you wish to use;
-              });
-            });
-        });
-
-      fetch("vrzevio.geojson")
-        .then((res) => res.json())
-        .then((data) => {
-          // add GeoJSON layer to the map once the file is loaded
-          L.geoJson(data, {
-            style: function (feature) {
-              return { color: "#FF7F27", weight: 5, opacity: 1 };
-            },
-          })
-            .addTo(map)
-            .bindTooltip("Verona Zevio lungo il fiume Adige")
-            .on("click", function (ev) {
-              event.preventDefault();
-              window.location.href = "verona-zevio-fiume-adige.html";
-            })
-            .on("mouseover", function (ev) {
-              this.setStyle({
-                weight: 10, //or whatever style you wish to use;
-              });
-            })
-            .on("mouseout", function () {
-              this.setStyle({
-                weight: 5, //or whatever style you wish to use;
-              });
-            });
-        });
-
-      fetch("camuzzoni.geojson")
-        .then((res) => res.json())
-        .then((data) => {
-          // add GeoJSON layer to the map once the file is loaded
-          L.geoJson(data, {
-            style: function (feature) {
-              return { color: "#00A2E8", weight: 5, opacity: 1 };
-            },
-          })
-            .addTo(map)
-            .bindTooltip("Ecomuseo dell'energia pulita")
-            .on("click", function (ev) {
-              event.preventDefault();
-              window.location.href = "ciclabile-verona-camuzzoni.html";
-            })
-            .on("mouseover", function (ev) {
-              this.setStyle({
-                weight: 10, //or whatever style you wish to use;
-              });
-            })
-            .on("mouseout", function () {
-              this.setStyle({
-                weight: 5, //or whatever style you wish to use;
-              });
-            });
-        });
-      fetch("rivoliaffi.geojson")
-        .then((res) => res.json())
-        .then((data) => {
-          // add GeoJSON layer to the map once the file is loaded
-          L.geoJson(data, {
-            style: function (feature) {
-              return { color: "#A349A4", weight: 5, opacity: 1 };
-            },
-          })
-            .addTo(map)
-            .bindTooltip("Eurovelo 7 Rivoli Affi")
-            .on("click", function (ev) {
-              event.preventDefault();
-              window.location.href = "eurovelo7-rivoli-affi.html";
-            })
-            .on("mouseover", function (ev) {
-              this.setStyle({
-                weight: 10, //or whatever style you wish to use;
-              });
-            })
-            .on("mouseout", function () {
-              this.setStyle({
-                weight: 5, //or whatever style you wish to use;
-              });
-            });
+            .bindTooltip("by Bike tra vigne e parchi");
         });
 
       map.on("zoomend", function (e) {
