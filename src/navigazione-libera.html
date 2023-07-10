@@ -64,14 +64,12 @@
           <div id="map"></div>
           <div id="demo"></div>
           <h3 style="text-align: center">
-            <span style="border-bottom: #22b14c 3px solid"
-              >Verona Bicipolitana</span
+            <span style="border-bottom: #ccc 3px solid"
+              >Verona Navigazione Libera</span
             >
           </h3>
-          <h5 style="text-align: center">
-            Aspettando la città 30 e la mobilità diffusa
-          </h5>
-          <h6 style="text-align: center">Grazie a FIAB Verona</h6>
+          <h5 style="text-align: center">non stai seguendo alcun percorso</h5>
+          <h6 style="text-align: center">open cycle map</h6>
 
           <!--   <a href=" https://youtu.be/OrTfywT4eFo" target="_blank"
             ><i class="bi bi-youtube"></i>&nbsp;<span
@@ -214,93 +212,11 @@
       });
       L.marker([45.4705, 10.817], { icon: blIcon }).addTo(map);
  */
-      fetch("vr.geojson")
-        .then((res) => res.json())
-        .then((data) => {
-          // add GeoJSON layer to the map once the file is loaded
-          L.geoJson(data, {
-            style: function (feature) {
-              return { color: "#22B14C", weight: 8, opacity: 1 };
-            },
-          })
-            .addTo(map)
-            .bindTooltip("verona bicipolitana");
-        });
 
       map.on("zoomend", function (e) {
         console.log(e.target._zoom);
         zoomlevel = e.target._zoom;
       });
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "Avesa",
-        iconSize: [43, 20],
-      });
-      L.marker([45.4661, 10.98873], { icon: blIcon }).addTo(map);
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "Stazione",
-        iconSize: [60, 20],
-      });
-      L.marker([45.42938, 10.98], { icon: blIcon }).addTo(map);
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "Montorio",
-        iconSize: [60, 20],
-      });
-      L.marker([45.45814, 11.06366], { icon: blIcon }).addTo(map);
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "Piazza Bra",
-        iconSize: [75, 20],
-      });
-      L.marker([45.439, 10.995], { icon: blIcon }).addTo(map);
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "UniVR",
-        iconSize: [50, 20],
-      });
-      L.marker([45.40374, 10.99744], { icon: blIcon }).addTo(map);
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "Palazzina",
-        iconSize: [70, 20],
-      });
-      L.marker([45.40306, 11.01505], { icon: blIcon }).addTo(map);
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "Ex ferrovia",
-        iconSize: [70, 20],
-      });
-      L.marker([45.41462, 10.95131], { icon: blIcon }).addTo(map);
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "Chievo",
-        iconSize: [50, 20],
-      });
-      L.marker([45.45754, 10.9462], { icon: blIcon }).addTo(map);
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "San Massimo",
-        iconSize: [80, 20],
-      });
-      L.marker([45.43907, 10.9473], { icon: blIcon }).addTo(map);
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "Saval",
-        iconSize: [45, 20],
-      });
-      L.marker([45.45352, 10.96052], { icon: blIcon }).addTo(map);
-
       circle = L.circleMarker([lat, lon], {
         color: "blue",
         fillColor: "#00f",
