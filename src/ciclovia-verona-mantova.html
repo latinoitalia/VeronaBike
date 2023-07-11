@@ -65,31 +65,16 @@
           <div id="demo"></div>
           <h3 style="text-align: center">
             <span style="border-bottom: blue 3px solid">
-              Ciclovia delle risorgive</span
+              Ciclovia Verona Mantova</span
             >
           </h3>
-          <h4 style="text-align: center">
-            Zevio Valeggio sul mincio,<br />
-            Bicitalia ciclovie di qualità<br />
-            35Km, dislivello 40m
-          </h4>
-          <a
-            href="https://www.bicitalia.org/it/percorsi/210-ciclovia-delle-risorgive"
-            target="_blank"
-            ><i class="bi bi-info-square-fill infosvg"></i>&nbsp;<span
-              >More info<i class="bi bi-arrow-right-square"></i></span></a
-          ><br />
-          <a
-            href="https://www.youtube.com/watch?v=UFszpAUKCSc&t=15s"
-            target="_blank"
-            ><i class="bi bi-youtube youtubesvg"></i>&nbsp;<span
-              >Video youtube <i class="bi bi-arrow-right-square"></i></span
-          ></a>
+          <h4 style="text-align: center">44Km, dislivello 100m</h4>
+
           <h4>show tour in</h4>
 
           <br />
           <a
-            href="https://www.komoot.com/it-it/tour/1207785858?ref=wtd"
+            href="https://www.komoot.com/it-it/tour/1207900848?ref=wtd"
             target="_blank"
             ><img class="komootsvg" src="komoot.svg" /><span
               >Komoot <i class="bi bi-arrow-right-square"></i></span
@@ -164,7 +149,7 @@
         }
       ).addTo(map);
 
-      fetch("cdr.geojson")
+      fetch("vrma.geojson")
         .then((res) => res.json())
         .then((data) => {
           L.geoJson(data, {
@@ -173,7 +158,7 @@
             },
           })
             .addTo(map)
-            .bindTooltip("ciclovia delle risorgive");
+            .bindTooltip("ciclovia Verona Mantova");
         });
 
       map.on("zoomend", function (e) {

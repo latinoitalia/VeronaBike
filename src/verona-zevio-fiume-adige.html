@@ -65,13 +65,19 @@
           <div id="demo"></div>
           <h3 style="text-align: center">
             <span style="border-bottom: blue 3px solid">
-              Verona, San martino, Zevio, ciclabile 1 dell'Adige</span
+              Ciclovia Adige sud</span
             >
           </h3>
           <h4 style="text-align: center">
-            ciclopedonale Marco Pantani,<br />
-            19Km, dislivello 40m
+            Bicitalia ciclovie di qualità<br />
+            165Km, dislivello 360m
           </h4>
+          <a
+            href="https://www.bicitalia.org/it/percorsi/214-ciclovia-adige-sud"
+            target="_blank"
+            ><i class="bi bi-info-square-fill infosvg"></i>&nbsp;<span
+              >More info<i class="bi bi-arrow-right-square"></i></span></a
+          ><br />
           <a href="https://youtu.be/LGUyEcGm2Uw" target="_blank"
             ><i class="bi bi-youtube youtubesvg"></i>&nbsp;<span
               >Video youtube <i class="bi bi-arrow-right-square"></i></span
@@ -80,7 +86,7 @@
 
           <br />
           <a
-            href="https://www.komoot.com/it-it/tour/996799886?ref=wtd&share_token=awHYfYFmPeem05jOu4gaQzQ8F7pHo0hTUHw5uSBK8w3lEr7Bmi"
+            href="https://www.komoot.com/it-it/tour/1207822756?ref=wtd"
             target="_blank"
             ><img class="komootsvg" src="komoot.svg" /><span
               >Komoot <i class="bi bi-arrow-right-square"></i></span
@@ -155,7 +161,7 @@
         }
       ).addTo(map);
 
-      fetch("vrzevio.geojson")
+      fetch("adigesud.geojson")
         .then((res) => res.json())
         .then((data) => {
           L.geoJson(data, {
@@ -164,7 +170,7 @@
             },
           })
             .addTo(map)
-            .bindTooltip("by Bike tra vigne e parchi");
+            .bindTooltip("ciclovia Adige sud");
         });
 
       map.on("zoomend", function (e) {

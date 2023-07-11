@@ -174,11 +174,11 @@
           <a href="verona-zevio-fiume-adige.html">
             <span style="background-color: blue">&nbsp;&nbsp;&nbsp;</span
             >&nbsp;<span
-              >Ciclabile 1 dell'adige, 19Km, dislivello 40m
+              >Ciclovia adige sud, 165Km, dislivello 360m
               <i class="bi bi-youtube youtubesvg"></i>
               <img class="komootsvg" src="komoot.svg" />
               <span style="background-color: darkmagenta; color: white"
-                >&nbspVr Zevio&nbsp;</span
+                >&nbspAdige sud&nbsp;</span
               >
               <i class="bi bi-arrow-right-square"></i></span></a
           ><br />
@@ -191,6 +191,28 @@
               <img class="komootsvg" src="komoot.svg" />
               <span style="background-color: darkmagenta; color: white"
                 >&nbspCDR&nbsp;</span
+              >
+              <i class="bi bi-arrow-right-square"></i></span></a
+          ><br />
+          <a href="ciclovia-claudia-augusta.html">
+            <span style="background-color: blue">&nbsp;&nbsp;&nbsp;</span
+            >&nbsp;<span
+              >Ciclovia Claudia Augusta Verona, Ostiglia, km 56, dislivello 130
+
+              <img class="komootsvg" src="komoot.svg" />
+              <span style="background-color: darkmagenta; color: white"
+                >&nbspClaudia Augusta&nbsp;</span
+              >
+              <i class="bi bi-arrow-right-square"></i></span></a
+          ><br />
+          <a href="ciclovia-verona-mantova.html">
+            <span style="background-color: blue">&nbsp;&nbsp;&nbsp;</span
+            >&nbsp;<span
+              >Ciclovia Verona, Mantova, km 44, dislivello 100
+
+              <img class="komootsvg" src="komoot.svg" />
+              <span style="background-color: darkmagenta; color: white"
+                >&nbspVerona Mantova&nbsp;</span
               >
               <i class="bi bi-arrow-right-square"></i></span
           ></a>
@@ -341,10 +363,10 @@
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
-        html: "Vr Zevio",
-        iconSize: [60, 20],
+        html: "Adige sud",
+        iconSize: [65, 20],
       });
-      L.marker([45.385, 11.135], { icon: blIcon })
+      L.marker([45.379, 11.135], { icon: blIcon })
         .addTo(map)
         .on("click", function (ev) {
           event.preventDefault();
@@ -422,7 +444,31 @@
           window.location.href = "regione-veneto-i1.html";
         });
 
-      fetch("vrzevio.geojson")
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "Claudia Augusta",
+        iconSize: [100, 20],
+      });
+      L.marker([45.37, 10.9845], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "Verona Mantova",
+        iconSize: [100, 20],
+      });
+      L.marker([45.32, 10.857], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
+        });
+
+      fetch("adigesud.geojson")
         .then((res) => res.json())
         .then((data) => {
           // add GeoJSON layer to the map once the file is loaded
@@ -437,6 +483,62 @@
             .on("click", function (ev) {
               event.preventDefault();
               window.location.href = "verona-zevio-fiume-adige.html";
+            })
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                weight: 10, //or whatever style you wish to use;
+              });
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                weight: 3, //or whatever style you wish to use;
+              });
+            });
+        });
+
+      fetch("cca.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "blue", weight: 3, opacity: 1 };
+            },
+            pane: "local",
+          })
+            .addTo(map)
+            .bindTooltip("ciclovia claudia augusta")
+            .on("click", function (ev) {
+              event.preventDefault();
+              window.location.href = "ciclovia-claudia-augusta.html";
+            })
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                weight: 10, //or whatever style you wish to use;
+              });
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                weight: 3, //or whatever style you wish to use;
+              });
+            });
+        });
+
+      fetch("vrma.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "blue", weight: 3, opacity: 1 };
+            },
+            pane: "local",
+          })
+            .addTo(map)
+            .bindTooltip("ciclovia Verona Mantova")
+            .on("click", function (ev) {
+              event.preventDefault();
+              window.location.href = "ciclovia-verona-mantova.html";
             })
             .on("mouseover", function (ev) {
               this.setStyle({
