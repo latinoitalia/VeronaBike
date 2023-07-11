@@ -65,35 +65,40 @@
           <div id="demo"></div>
           <h3 style="text-align: center">
             <span style="border-bottom: red 3px solid">
-              Ciclabile regione Veneto I1 Rivoli, Bussolengo
+              Ciclabile regione Veneto I1
             </span>
           </h3>
           <h4 style="text-align: center">
-            ciclabile regione veneto I1 da parco eolico<br />
-            BI -4 Adige<br />
+            ciclabile regione veneto I1<br />
             Ecomuseo dell'energia pulita<br />
             16Km, dislivello 160m
           </h4>
+
+          <a href="https://www.veneto.eu/IT/Garda-Venezia/" target="_blank"
+            ><i class="bi bi-info-square-fill infosvg"></i>&nbsp;<span
+              >More info<i class="bi bi-arrow-right-square"></i></span></a
+          ><br />
           <a
             href="https://www.youtube.com/watch?v=0RQ0pLAd7x4&t=11s"
             target="_blank"
             ><i class="bi bi-youtube youtubesvg"></i>&nbsp;<span
-              >Video youtube <i class="bi bi-arrow-right-square"></i></span></a
+              >Video youtube da Rivoli a Bussolengo via parco eolico<i
+                class="bi bi-arrow-right-square"
+              ></i></span></a
+          ><br />
+          <a
+            href="https://www.youtube.com/watch?v=QInQaADQAH4&t=413s"
+            target="_blank"
+            ><i class="bi bi-youtube youtubesvg"></i>&nbsp;<span
+              >Video youtube da Verona a Bussolengo<i
+                class="bi bi-arrow-right-square"
+              ></i></span></a
           ><br />
           <a href="https://www.youtube.com/watch?v=Y79ae23jC-A" target="_blank"
             ><i class="bi bi-youtube youtubesvg"></i>&nbsp;<span
               >Ecomuseo energia pulita Video youtube
-              <i class="bi bi-arrow-right-square"></i></span
-          ></a>
-          <h4>show tour in</h4>
-
-          <br />
-          <a
-            href="https://www.komoot.com/it-it/tour/1085238113?ref=wtd"
-            target="_blank"
-            ><img class="komootsvg" src="komoot.svg" /><span
-              >Komoot <i class="bi bi-arrow-right-square"></i></span
-          ></a>
+              <i class="bi bi-arrow-right-square"></i></span></a
+          ><br />
         </main>
       </div>
     </div>
@@ -164,7 +169,7 @@
         }
       ).addTo(map);
 
-      fetch("ribueol.geojson")
+      fetch("i1.geojson")
         .then((res) => res.json())
         .then((data) => {
           L.geoJson(data, {

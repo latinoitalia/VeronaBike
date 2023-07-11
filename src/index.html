@@ -90,10 +90,10 @@
           ></a>
         </h4> -->
           <h4 class="mt-3" style="padding-left: 10px; color: #555">
-            Start navigazione official bike routes provincia di Verona
+            Navigazione su official bike routes provincia di Verona, Veneto
           </h4>
           <h3>Lago Di Garda</h3>
-          <a href="verona-bussolengo-regione-veneto-i1.html">
+          <!--  <a href="verona-bussolengo-regione-veneto-i1.html">
             <span style="background-color: red">&nbsp;&nbsp;&nbsp;</span
             >&nbsp;<span
               >Regione Veneto I1, Verona Bussolengo, 7Km, dislivello 50m
@@ -104,15 +104,40 @@
               >
 
               <i class="bi bi-arrow-right-square"></i></span></a
-          ><br />
-          <a href="regione-veneto-i1-rivoli-bussolengo.html">
+          ><br !-->
+          <a href="regione-veneto-i1.html">
             <span style="background-color: red">&nbsp;&nbsp;&nbsp;</span
             >&nbsp;<span
-              >Regione Veneto I1, Rivoli Bussolengo, 16Km, dislivello 160m
+              >Ciclopista Regione Veneto I1, Garda, Verona, Vicenza, Padova,
+              Venezia
               <i class="bi bi-youtube youtubesvg"></i>
-              <img class="komootsvg" src="komoot.svg" />
+              <i class="bi bi-info-square-fill infosvg"></i>
               <span style="background-color: darkmagenta; color: white"
-                >&nbspI1RiB&nbsp;</span
+                >&nbspI1&nbsp;</span
+              >
+
+              <i class="bi bi-arrow-right-square"></i></span></a
+          ><br />
+          <a href="eurovelo-7.html">
+            <span style="background-color: red">&nbsp;&nbsp;&nbsp;</span
+            >&nbsp;<span
+              >Ciclopista Europea Eurovelo 7
+
+              <i class="bi bi-info-square-fill infosvg"></i>
+              <span style="background-color: darkmagenta; color: white"
+                >&nbspEV7&nbsp;</span
+              >
+
+              <i class="bi bi-arrow-right-square"></i></span></a
+          ><br />
+          <a href="aida.html">
+            <span style="background-color: red">&nbsp;&nbsp;&nbsp;</span
+            >&nbsp;<span
+              >Ciclopista AIDA
+
+              <i class="bi bi-info-square-fill infosvg"></i>
+              <span style="background-color: darkmagenta; color: white"
+                >&nbspAIDA&nbsp;</span
               >
 
               <i class="bi bi-arrow-right-square"></i></span></a
@@ -129,7 +154,7 @@
               <img class="komootsvg" src="bikemap.png" />
               <img class="komootsvg" src="routeyou.png" />
               <span style="background-color: darkmagenta; color: white"
-                >&nbspBVP&nbsp;</span
+                >&nbspvigne e parchi&nbsp;</span
               >
               <i class="bi bi-arrow-right-square"></i></span
           ></a>
@@ -153,7 +178,7 @@
               <i class="bi bi-youtube youtubesvg"></i>
               <img class="komootsvg" src="komoot.svg" />
               <span style="background-color: darkmagenta; color: white"
-                >&nbspVRZ&nbsp;</span
+                >&nbspVr Zevio&nbsp;</span
               >
               <i class="bi bi-arrow-right-square"></i></span
           ></a>
@@ -280,7 +305,7 @@
         html: "29",
         iconSize: [25, 20],
       });
-      L.marker([45.466, 10.776], { icon: blIcon })
+      L.marker([45.42, 10.7565], { icon: blIcon })
         .addTo(map)
         .on("click", function (ev) {
           event.preventDefault();
@@ -289,10 +314,10 @@
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
-        html: "VRZ",
-        iconSize: [37, 20],
+        html: "Vr Zevio",
+        iconSize: [60, 20],
       });
-      L.marker([45.395, 11.035], { icon: blIcon })
+      L.marker([45.385, 11.135], { icon: blIcon })
         .addTo(map)
         .on("click", function (ev) {
           event.preventDefault();
@@ -301,10 +326,10 @@
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
-        html: "BVP",
-        iconSize: [35, 20],
+        html: "vigne e parchi",
+        iconSize: [85, 20],
       });
-      L.marker([45.474, 10.756], { icon: blIcon })
+      L.marker([45.474, 10.755], { icon: blIcon })
         .addTo(map)
         .on("click", function (ev) {
           event.preventDefault();
@@ -325,26 +350,49 @@
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
-        html: "I1 VrB",
-        iconSize: [45, 20],
+        html: "I1",
+        iconSize: [20, 20],
       });
       L.marker([45.469, 10.9], { icon: blIcon })
         .addTo(map)
         .on("click", function (ev) {
           event.preventDefault();
-          window.location.href = "verona-bussolengo-regione-veneto-i1.html";
+          window.location.href = "regione-veneto-i1.html";
         });
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
-        html: "I1 RiB",
-        iconSize: [45, 20],
+        html: "I1",
+        iconSize: [20, 20],
       });
-      L.marker([45.55, 10.8], { icon: blIcon })
+      L.marker([45.55, 10.81915], { icon: blIcon })
         .addTo(map)
         .on("click", function (ev) {
           event.preventDefault();
-          window.location.href = "regione-veneto-i1-rivoli-bussolengo.html";
+          window.location.href = "regione-veneto-i1.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "EV7",
+        iconSize: [35, 20],
+      });
+      L.marker([45.55, 10.719], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
+        });
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "AIDA",
+        iconSize: [40, 20],
+      });
+      L.marker([45.45, 10.5515], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
         });
 
       fetch("29.geojson")
@@ -455,20 +503,20 @@
             });
         });
 
-      fetch("vrbu.geojson")
+      fetch("i1.geojson")
         .then((res) => res.json())
         .then((data) => {
           // add GeoJSON layer to the map once the file is loaded
           L.geoJson(data, {
             style: function (feature) {
-              return { color: "red", weight: 5, opacity: 1 };
+              return { color: "red", weight: 3, opacity: 1 };
             },
           })
             .addTo(map)
-            .bindTooltip("Regione Veneto I1, Verona Bussolengo")
+            .bindTooltip("Regione Veneto I1")
             .on("click", function (ev) {
               event.preventDefault();
-              window.location.href = "verona-bussolengo-regione-veneto-i1.html";
+              window.location.href = "regione-veneto-i1.html";
             })
             .on("mouseover", function (ev) {
               this.setStyle({
@@ -477,37 +525,64 @@
             })
             .on("mouseout", function () {
               this.setStyle({
-                weight: 5, //or whatever style you wish to use;
-              });
-            });
-        });
-      fetch("ribueol.geojson")
-        .then((res) => res.json())
-        .then((data) => {
-          // add GeoJSON layer to the map once the file is loaded
-          L.geoJson(data, {
-            style: function (feature) {
-              return { color: "red", weight: 5, opacity: 1 };
-            },
-          })
-            .addTo(map)
-            .bindTooltip("Regione Veneto I1, Rivoli Bussolengo da parco eolico")
-            .on("click", function (ev) {
-              event.preventDefault();
-              window.location.href = "regione-veneto-i1-rivoli-bussolengo.html";
-            })
-            .on("mouseover", function (ev) {
-              this.setStyle({
-                weight: 10, //or whatever style you wish to use;
-              });
-            })
-            .on("mouseout", function () {
-              this.setStyle({
-                weight: 5, //or whatever style you wish to use;
+                weight: 3, //or whatever style you wish to use;
               });
             });
         });
 
+      fetch("ev7.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "red", weight: 3, opacity: 1 };
+            },
+          })
+            .addTo(map)
+            .bindTooltip("Eurovelo 7")
+            .on("click", function (ev) {
+              event.preventDefault();
+              window.location.href = "eurovelo-7.html";
+            })
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                weight: 10, //or whatever style you wish to use;
+              });
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                weight: 3, //or whatever style you wish to use;
+              });
+            });
+        });
+
+      fetch("aida.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "red", weight: 3, opacity: 1 };
+            },
+          })
+            .addTo(map)
+            .bindTooltip("Ciclovia Aida")
+            .on("click", function (ev) {
+              event.preventDefault();
+              window.location.href = "aida.html";
+            })
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                weight: 10, //or whatever style you wish to use;
+              });
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                weight: 3, //or whatever style you wish to use;
+              });
+            });
+        });
       map.on("zoomend", function (e) {
         console.log(e.target._zoom);
         zoomlevel = e.target._zoom;

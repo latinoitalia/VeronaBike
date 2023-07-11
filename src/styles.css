@@ -67,6 +67,12 @@ main > h1 {
     color: red;
     }
 
+    infosvg{
+      width: 20px;
+      height: 20px;
+      color: blue;
+    }
+
   .wikiloc{
     width: 20px;
     height: 20px;
