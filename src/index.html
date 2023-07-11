@@ -284,6 +284,9 @@
       map.createPane("puntatore");
       map.getPane("puntatore").style.zIndex = 650;
       map.getPane("puntatore").style.pointerEvents = "none";
+      map.createPane("local");
+      map.getPane("local").style.zIndex = 600;
+      map.getPane("markerPane").style.zIndex = 700;
       var principale = L.tileLayer(
         "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
         {
@@ -403,6 +406,7 @@
             style: function (feature) {
               return { color: "blue", weight: 3, opacity: 1 };
             },
+            pane: "local",
           })
             .addTo(map)
             .bindTooltip("Verona Zevio lungo il fiume Adige")
@@ -511,6 +515,7 @@
             style: function (feature) {
               return { color: "#22B14C", weight: 5, opacity: 1 };
             },
+            pane: "local",
           })
             .addTo(map)
             .bindTooltip("Ciclabile 29 Terre di Custoza Bussolengo Castelnuovo")
@@ -538,6 +543,7 @@
             style: function (feature) {
               return { color: "#22b14c", weight: 5, opacity: 1 };
             },
+            pane: "local",
           })
             .addTo(map)
             .bindTooltip("Bicipolitana")
@@ -565,6 +571,7 @@
             style: function (feature) {
               return { color: "#6c202c", weight: 5, opacity: 1 };
             },
+            pane: "local",
           })
             .addTo(map)
             .bindTooltip("by Bike tra vigne e parchi")
