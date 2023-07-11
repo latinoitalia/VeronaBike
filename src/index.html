@@ -99,6 +99,21 @@
               >Regione Veneto I1, Verona Bussolengo, 16Km, dislivello 50m
               <i class="bi bi-youtube youtubesvg"></i>
               <img class="komootsvg" src="komoot.svg" />
+              <span style="background-color: darkmagenta; color: white"
+                >&nbspI1VrB&nbsp;</span
+              >
+
+              <i class="bi bi-arrow-right-square"></i></span></a
+          ><br />
+          <a href="regione-veneto-i1-rivoli-bussolengo.html">
+            <span style="background-color: red">&nbsp;&nbsp;&nbsp;</span
+            >&nbsp;<span
+              >Regione Veneto I1, Rivoli Bussolengo, 16Km, dislivello 160m
+              <i class="bi bi-youtube youtubesvg"></i>
+              <img class="komootsvg" src="komoot.svg" />
+              <span style="background-color: darkmagenta; color: white"
+                >&nbspI1RiB&nbsp;</span
+              >
 
               <i class="bi bi-arrow-right-square"></i></span></a
           ><br />
@@ -301,11 +316,35 @@
         html: "bicipolitana",
         iconSize: [70, 20],
       });
-      L.marker([45.459, 10.945], { icon: blIcon })
+      L.marker([45.459, 11], { icon: blIcon })
         .addTo(map)
         .on("click", function (ev) {
           event.preventDefault();
           window.location.href = "verona-bicipolitana.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "I1 VrB",
+        iconSize: [45, 20],
+      });
+      L.marker([45.469, 10.9], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "verona-bussolengo-regione-veneto-i1.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "I1 RiB",
+        iconSize: [45, 20],
+      });
+      L.marker([45.55, 10.8], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1-rivoli-bussolengo.html";
         });
 
       fetch("29.geojson")
@@ -430,6 +469,32 @@
             .on("click", function (ev) {
               event.preventDefault();
               window.location.href = "verona-bussolengo-regione-veneto-i1.html";
+            })
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                weight: 10, //or whatever style you wish to use;
+              });
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                weight: 5, //or whatever style you wish to use;
+              });
+            });
+        });
+      fetch("ribueol.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "red", weight: 5, opacity: 1 };
+            },
+          })
+            .addTo(map)
+            .bindTooltip("Regione Veneto I1, Rivoli Bussolengo da parco eolico")
+            .on("click", function (ev) {
+              event.preventDefault();
+              window.location.href = "regione-veneto-i1-rivoli-bussolengo.html";
             })
             .on("mouseover", function (ev) {
               this.setStyle({
