@@ -63,61 +63,7 @@
         <main>
           <div id="map"></div>
           <div id="demo"></div>
-          <h3 style="text-align: center">
-            <span style="border-bottom: #ccc 3px solid"
-              >Navigazione Libera</span
-            >
-          </h3>
           <h6 style="text-align: center">open cycle map</h6>
-
-          <!--   <a href=" https://youtu.be/OrTfywT4eFo" target="_blank"
-            ><i class="bi bi-youtube"></i>&nbsp;<span
-              >Video youtube <i class="bi bi-arrow-right-square"></i></span
-          ></a> -->
-          <!-- <h4>show tour in</h4> -->
-          <!-- 
-          <a
-            href="https://www.google.com/maps/d/u/0/edit?mid=1-YNur1EyJzVb8_8NBTOuryR7UpG5aV0&usp=sharing"
-            target="_blank"
-            ><i class="bi bi-geo-alt"></i
-            ><span>Google maps <i class="bi bi-arrow-right-square"></i></span
-          ></a>
-
-          <br />
-          <a
-            href="https://www.komoot.com/it-it/tour/1203647576?ref=wtd"
-            target="_blank"
-            ><img class="komootsvg" src="komoot.svg" /><span
-              >Komoot <i class="bi bi-arrow-right-square"></i></span
-          ></a>
-          <br />
-          <a
-            href="https://it.wikiloc.com/percorsi-bicicletta-da-turismo/by-bike-tra-vigne-e-parchi-gabanel-bike-hostel-139996061#lb-embed"
-            target="_blank"
-            ><img src="wikiloc.png" class="wikiloc" /><span
-              >Wikiloc <i class="bi bi-arrow-right-square"></i></span
-          ></a>
-          <br />
-          <a
-            href="https://www.bikemap.net/en/r/13200313/#11.65/45.4712/10.7838"
-            target="_blank"
-            ><img class="komootsvg" src="bikemap.png" /><span
-              >Bikemap <i class="bi bi-arrow-right-square"></i></span
-          ></a>
-          <br />
-          <a
-            href="https://www.routeyou.com/it/route/view/13012746/itinerario-ciclabile/by-bike-tra-vigne-e-parchi-gabanel-bike-hostel"
-            target="_blank"
-            ><img class="komootsvg" src="routeyou.png" /><span
-              >RouteYou <i class="bi bi-arrow-right-square"></i></span
-          ></a>
-
-          <br />
-
-          <a href="https://www.relive.cc/view/vdvmX4kZ2xq" target="_blank"
-            ><img src="relive.png" class="komootsvg" /><span
-              >Relive <i class="bi bi-arrow-right-square"></i></span
-          ></a> -->
         </main>
       </div>
     </div>
@@ -140,7 +86,6 @@
     var circle;
     var zoomlevel = 13;
     var myStyle = {
-      // Define your style object
       color: "#ff0000",
     };
 
@@ -155,19 +100,9 @@
     }
 
     function showPosition(position) {
-      /* 
-        x.innerHTML =
-          "Latitude: " +
-          position.coords.latitude +
-          "<br>Longitude: " +
-          position.coords.longitude +
-          "<br>Zoom: " +
-          zoomlevel;
-     */
       lat = position.coords.latitude;
       lon = position.coords.longitude;
-      //lat = 45.42;
-      //lon = 10.98;
+
       if (map != undefined) {
         map.setView([lat, lon], zoomlevel, { animation: true });
         circle.setLatLng([lat, lon]);
@@ -186,6 +121,9 @@
       map = L.map("map");
       map.setView([lat, lon], zoomlevel);
       map.addControl(new L.Control.Fullscreen());
+      map.createPane("puntatore");
+      map.getPane("puntatore").style.zIndex = 650;
+      map.getPane("puntatore").style.pointerEvents = "none";
       L.tileLayer(
         "https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=00fef80623bc42e589b687b623114593",
         {
@@ -196,22 +134,6 @@
         }
       ).addTo(map);
 
-      /*   fetch("bussolengo-pacengo.geojson")
-        .then((res) => res.json())
-        .then((data) => {
-          L.geoJson(data).addTo(map);
-        }); */
-
-      // load GeoJSON from an external file
-
-      /*    var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "Gabanel<br>Bike Hostel",
-        iconSize: [90, 40],
-      });
-      L.marker([45.4705, 10.817], { icon: blIcon }).addTo(map);
- */
-
       map.on("zoomend", function (e) {
         console.log(e.target._zoom);
         zoomlevel = e.target._zoom;
@@ -221,6 +143,7 @@
         fillColor: "#00f",
         fillOpacity: 1,
         radius: 10,
+        pane: "puntatore",
       }).addTo(map);
     }
   </script>

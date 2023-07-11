@@ -183,6 +183,9 @@
       map = L.map("map");
       map.setView([lat, lon], zoomlevel);
       map.addControl(new L.Control.Fullscreen());
+      map.createPane("puntatore");
+      map.getPane("puntatore").style.zIndex = 650;
+      map.getPane("puntatore").style.pointerEvents = "none";
       L.tileLayer(
         "https://tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=00fef80623bc42e589b687b623114593",
         {
@@ -218,6 +221,7 @@
         fillColor: "#00f",
         fillOpacity: 1,
         radius: 10,
+        pane: "puntatore",
       }).addTo(map);
     }
   </script>

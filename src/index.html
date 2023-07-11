@@ -69,15 +69,13 @@
           <div id="demo"></div>
           <h2 style="text-align: center">Verona Bike home</h2>
           <h4 style="text-align: center">
-           
-         
-          <a href="navigazione-libera.html" class="fw-bolder"
-          ><span
-            >Start Navigazione Open Cycle Map
-            <i class="bi bi-arrow-right-square"></i></span
-          ></a>
-        </h4>
-        <h4 style="text-align: center">
+            <a href="navigazione-libera.html" class="fw-bolder"
+              ><span
+                >Start Navigazione con Open Cycle Map
+                <i class="bi bi-arrow-right-square"></i></span
+            ></a>
+          </h4>
+          <!--  <h4 style="text-align: center">
           <a href="navigazione-libera-terrain.html" class="fw-bolder"
           ><span
             >Start Navigazione Outdoor Map
@@ -90,8 +88,10 @@
             >Start Navigazione Landscape Map
             <i class="bi bi-arrow-right-square"></i></span
           ></a>
-        </h4>
-          <h4 class="mt-3" style="padding-left: 10px; color: #555">Raccolte</h4>
+        </h4> -->
+          <h4 class="mt-3" style="padding-left: 10px; color: #555">
+            Ciclabili ufficiali provincia di Verona
+          </h4>
           <h3>Lago Di Garda</h3>
           <a href="bike-tra-vigne-e-parchi-gabanel.html"
             ><span style="background-color: #6c202c">&nbsp;&nbsp;&nbsp;</span
@@ -102,9 +102,8 @@
                 >&nbspBVP&nbsp;</span
               >
               <i class="bi bi-arrow-right-square"></i></span
-            ></a>
-            <br
-          />
+          ></a>
+          <br />
           <a href="Ciclabile-29-Terre-di-Custoza.html"
             ><span style="background-color: #22b14c">&nbsp;&nbsp;&nbsp;</span
             >&nbsp;<span
@@ -115,16 +114,7 @@
               >
               <i class="bi bi-arrow-right-square"></i></span></a
           ><br />
-          <a href="eurovelo7-rivoli-affi.html">
-            <span style="background-color: #a349a4">&nbsp;&nbsp;&nbsp;</span
-            >&nbsp;
-            <span
-              >Eurovelo 7 da Rivoli ad Affi 5Km, dislivello 70m<span
-                style="background-color: darkmagenta; color: white"
-                >&nbspRA&nbsp;</span
-              >
-              <i class="bi bi-arrow-right-square"></i></span
-          ></a>
+
           <h3 class="mt-2">Verona EST</h3>
           <a href="verona-zevio-fiume-adige.html">
             <span style="background-color: #ff7f27">&nbsp;&nbsp;&nbsp;</span
@@ -137,16 +127,15 @@
           ></a>
           <h3 class="mt-2">Verona Bicipolitana</h3>
           <a href="verona-bicipolitana.html">
-            <span style="background-color: #22B14C">&nbsp;&nbsp;&nbsp;</span
-            >&nbsp;<span>
-              Verona&nbsp;</span
-              ><span
+            <span style="background-color: #22b14c">&nbsp;&nbsp;&nbsp;</span
+            >&nbsp; Verona&nbsp;<span
               style="background-color: darkmagenta; color: white"
-              >&nbspbicipolitana&nbsp;</span
             >
-              <i class="bi bi-arrow-right-square"></i></span
+              &nbspbicipolitana&nbsp;</span
+            >
+            <i class="bi bi-arrow-right-square"></i
           ></a>
-         <!--  <a href="ciclabile-verona-camuzzoni.html">
+          <!--  <a href="ciclabile-verona-camuzzoni.html">
             <span style="background-color: #00a2e8">&nbsp;&nbsp;&nbsp;</span
             >&nbsp;<span>
               Verona canale camuzzoni diga Chievo porta Palio ECOMUSEO
@@ -218,7 +207,7 @@
         getMap();
       }
     }
-   // const watchID = showPosition();
+    // const watchID = showPosition();
     /*   const watchID = navigator.geolocation.watchPosition(
       showPosition,
       error,
@@ -235,7 +224,10 @@
       map = L.map("map");
       map.setView([lat, lon], zoomlevel);
       map.addControl(new L.Control.Fullscreen());
-      L.tileLayer(
+      map.createPane("puntatore");
+      map.getPane("puntatore").style.zIndex = 650;
+      map.getPane("puntatore").style.pointerEvents = "none";
+      var principale = L.tileLayer(
         "https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=00fef80623bc42e589b687b623114593",
         {
           maxZoom: 17,
@@ -244,7 +236,6 @@
             '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }
       ).addTo(map);
-     
 
       /*   fetch("bussolengo-pacengo.geojson")
         .then((res) => res.json())
@@ -299,25 +290,6 @@
           event.preventDefault();
           window.location.href = "verona-bicipolitana.html";
         });
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
-        html: "RA",
-        iconSize: [30, 20],
-      });
-      L.marker([45.574, 10.804], { icon: blIcon })
-        .addTo(map)
-        .on("click", function (ev) {
-          event.preventDefault();
-          window.location.href = "eurovelo7-rivoli-affi.html";
-        });
-
-      // var blIcon = L.divIcon({
-      //   className: "bl-div-icon",
-      //   html: "Gabanel<br>Bike Hostel",
-      //   iconSize: [90, 40],
-      // });
-      // L.marker([45.4705, 10.817], { icon: blIcon }).addTo(map);
 
       fetch("29.geojson")
         .then((res) => res.json())
@@ -426,43 +398,18 @@
               });
             });
         });
-      fetch("rivoliaffi.geojson")
-        .then((res) => res.json())
-        .then((data) => {
-          // add GeoJSON layer to the map once the file is loaded
-          L.geoJson(data, {
-            style: function (feature) {
-              return { color: "#A349A4", weight: 5, opacity: 1 };
-            },
-          })
-            .addTo(map)
-            .bindTooltip("Eurovelo 7 Rivoli Affi")
-            .on("click", function (ev) {
-              event.preventDefault();
-              window.location.href = "eurovelo7-rivoli-affi.html";
-            })
-            .on("mouseover", function (ev) {
-              this.setStyle({
-                weight: 10, //or whatever style you wish to use;
-              });
-            })
-            .on("mouseout", function () {
-              this.setStyle({
-                weight: 5, //or whatever style you wish to use;
-              });
-            });
-        });
 
       map.on("zoomend", function (e) {
         console.log(e.target._zoom);
         zoomlevel = e.target._zoom;
       });
 
-       circle = L.circleMarker([lat, lon], {
-        color: "gray",
-        fillColor: "gray",
+      circle = L.circleMarker([lat, lon], {
+        color: "red",
+        fillColor: "red",
         fillOpacity: 1,
         radius: 10,
+        pane: "puntatore",
       }).addTo(map);
     }
   </script>
