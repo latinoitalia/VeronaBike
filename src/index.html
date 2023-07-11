@@ -170,7 +170,7 @@
               <i class="bi bi-arrow-right-square"></i></span></a
           ><br />
 
-          <h3 class="mt-2">Verona EST</h3>
+          <h3 class="mt-2">Verona SUD EST</h3>
           <a href="verona-zevio-fiume-adige.html">
             <span style="background-color: blue">&nbsp;&nbsp;&nbsp;</span
             >&nbsp;<span
@@ -179,6 +179,18 @@
               <img class="komootsvg" src="komoot.svg" />
               <span style="background-color: darkmagenta; color: white"
                 >&nbspVr Zevio&nbsp;</span
+              >
+              <i class="bi bi-arrow-right-square"></i></span></a
+          ><br />
+          <a href="ciclovia-delle-risorgive.html">
+            <span style="background-color: blue">&nbsp;&nbsp;&nbsp;</span
+            >&nbsp;<span
+              >Ciclovia delle risorgive, 35Km, dislivello 40m
+              <i class="bi bi-youtube youtubesvg"></i>
+              <i class="bi bi-info-square-fill infosvg"></i>
+              <img class="komootsvg" src="komoot.svg" />
+              <span style="background-color: darkmagenta; color: white"
+                >&nbspCDR&nbsp;</span
               >
               <i class="bi bi-arrow-right-square"></i></span
           ></a>
@@ -317,6 +329,18 @@
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
+        html: "CDR",
+        iconSize: [33, 20],
+      });
+      L.marker([45.357, 10.7565], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
         html: "Vr Zevio",
         iconSize: [60, 20],
       });
@@ -413,6 +437,34 @@
             .on("click", function (ev) {
               event.preventDefault();
               window.location.href = "verona-zevio-fiume-adige.html";
+            })
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                weight: 10, //or whatever style you wish to use;
+              });
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                weight: 3, //or whatever style you wish to use;
+              });
+            });
+        });
+
+      fetch("cdr.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "blue", weight: 3, opacity: 1 };
+            },
+            pane: "local",
+          })
+            .addTo(map)
+            .bindTooltip("Ciclovia delle risorgive")
+            .on("click", function (ev) {
+              event.preventDefault();
+              window.location.href = "ciclovia-delle-risorgive.html";
             })
             .on("mouseover", function (ev) {
               this.setStyle({
