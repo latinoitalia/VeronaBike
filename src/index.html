@@ -166,6 +166,9 @@
               >Ciclovia adige sud, 165Km, dislivello 360m
               <i class="bi bi-youtube youtubesvg"></i>
               <img class="komootsvg" src="komoot.svg" />
+              <img src="wikiloc.png" class="wikiloc" />
+              <img src="google.png" class="wikiloc" />
+              <img class="komootsvg" src="bikemap.png" />
               <span style="background-color: darkmagenta; color: white"
                 >&nbspAdige sud&nbsp;</span
               >
@@ -360,6 +363,30 @@
         .on("click", function (ev) {
           event.preventDefault();
           window.location.href = "verona-zevio-fiume-adige.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "I1",
+        iconSize: [20, 20],
+      });
+      L.marker([45.43, 11.2], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "AIDA",
+        iconSize: [40, 20],
+      });
+      L.marker([45.4, 11.125], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
         });
 
       var blIcon = L.divIcon({
