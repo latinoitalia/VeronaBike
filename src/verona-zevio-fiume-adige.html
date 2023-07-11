@@ -64,8 +64,8 @@
           <div id="map"></div>
           <div id="demo"></div>
           <h3 style="text-align: center">
-            <span style="border-bottom: #ff7f27 3px solid">
-              Verona, San martino, Zevio, ciclabile dell'Adige</span
+            <span style="border-bottom: blue 3px solid">
+              Verona, San martino, Zevio, ciclabile 1 dell'Adige</span
             >
           </h3>
           <h4 style="text-align: center">
@@ -160,7 +160,7 @@
         .then((data) => {
           L.geoJson(data, {
             style: function (feature) {
-              return { color: "#ff7f27", weight: 8, opacity: 1 };
+              return { color: "blue", weight: 8, opacity: 1 };
             },
           })
             .addTo(map)
