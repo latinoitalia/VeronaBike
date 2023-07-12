@@ -203,6 +203,8 @@
               >Ciclovia Verona, Mantova, km 44, dislivello 100
 
               <img class="komootsvg" src="komoot.svg" />
+              <img src="wikiloc.png" class="wikiloc" />
+              <img src="google.png" class="wikiloc" />
               <span style="background-color: darkmagenta; color: white"
                 >&nbspVerona Mantova&nbsp;</span
               >
@@ -284,28 +286,28 @@
       //lat = 45.42;
       //lon = 10.98;
       if (map != undefined) {
-        map.setView([lat, lon], zoomlevel, { animation: true });
-        //circle.setLatLng([lat, lon]);
+        //map.setView([lat, lon], zoomlevel, { animation: true });
+        circle.setLatLng([lat, lon]);
       } else {
         getMap();
       }
     }
     // const watchID = showPosition();
-    /*   const watchID = navigator.geolocation.watchPosition(
-      showPosition,
-      error,
-      options
-    ); */
-
-    const watchID = navigator.geolocation.getCurrentPosition(
+    const watchID = navigator.geolocation.watchPosition(
       showPosition,
       error,
       options
     );
 
+    /*   const watchID = navigator.geolocation.getCurrentPosition(
+      showPosition,
+      error,
+      options
+    ); */
+
     function getMap() {
       map = L.map("map");
-      map.setView([lat, lon], zoomlevel);
+      map.setView([45.42, 10.98], zoomlevel);
       map.addControl(new L.Control.Fullscreen());
       map.createPane("puntatore");
       map.getPane("puntatore").style.zIndex = 650;
@@ -439,6 +441,18 @@
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
+        html: "I1",
+        iconSize: [20, 20],
+      });
+      L.marker([45.477, 11.48], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
         html: "EV7",
         iconSize: [35, 20],
       });
@@ -448,6 +462,79 @@
           event.preventDefault();
           window.location.href = "regione-veneto-i1.html";
         });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "EV7",
+        iconSize: [35, 20],
+      });
+      L.marker([45.45, 10.695], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "EV7",
+        iconSize: [35, 20],
+      });
+      L.marker([45.38, 10.7], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "EV7",
+        iconSize: [35, 20],
+      });
+      L.marker([45.28, 10.73], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "EV7",
+        iconSize: [35, 20],
+      });
+      L.marker([45.62, 10.857], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "AIDA",
+        iconSize: [40, 20],
+      });
+      L.marker([45.412, 10.85], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "AIDA",
+        iconSize: [40, 20],
+      });
+      L.marker([45.53, 11.48], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
+        });
+
       var blIcon = L.divIcon({
         className: "bl-div-icon",
         html: "AIDA",
@@ -767,8 +854,8 @@
       });
 
       circle = L.circleMarker([lat, lon], {
-        color: "red",
-        fillColor: "red",
+        color: "blue",
+        fillColor: "blue",
         fillOpacity: 1,
         radius: 10,
         pane: "puntatore",
