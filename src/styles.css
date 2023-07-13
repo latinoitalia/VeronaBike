@@ -61,6 +61,12 @@ main > h1 {
     }
 
     
+  .logos{
+    width: 80px;
+    height: 80px;
+    }
+
+    
   .youtubesvg{
     width: 20px;
     height: 20px;
