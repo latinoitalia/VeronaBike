@@ -98,7 +98,7 @@
             ><span
               >&nbsp;<span style="background-color: darkmagenta; color: white"
                 >&nbspI1&nbsp;</span
-              >&nbsp;Itinerario I1 Regione Veneto
+              >&nbsp;Itinerario I1 - I2 Regione Veneto
               <img src="alltrails.png" class="wikiloc" />
               <img src="google.png" class="wikiloc" />
               <i class="bi bi-youtube youtubesvg"></i>
@@ -372,18 +372,6 @@
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
-        html: "I1",
-        iconSize: [20, 20],
-      });
-      L.marker([45.43, 11.2], { icon: blIcon })
-        .addTo(map)
-        .on("click", function (ev) {
-          event.preventDefault();
-          window.location.href = "regione-veneto-i1.html";
-        });
-
-      var blIcon = L.divIcon({
-        className: "bl-div-icon",
         html: "AIDA",
         iconSize: [40, 20],
       });
@@ -444,10 +432,21 @@
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
-        html: "I1",
+        html: "I2",
         iconSize: [20, 20],
       });
       L.marker([45.477, 11.48], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "regione-veneto-i1.html";
+        });
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "I2",
+        iconSize: [20, 20],
+      });
+      L.marker([45.4215, 11.2], { icon: blIcon })
         .addTo(map)
         .on("click", function (ev) {
           event.preventDefault();
