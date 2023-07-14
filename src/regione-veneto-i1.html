@@ -20,7 +20,7 @@
       crossorigin="anonymous"
     />
 
-    <link rel="manifest" href="manifest.json" />
+    <!-- <link rel="manifest" href="manifest.json" /> -->
     <meta name="theme-color" content="#00A2E8" />
     <link
       rel="stylesheet"
@@ -233,22 +233,22 @@
       }).addTo(map);
     }
   </script>
-  <script>
+  <!-- <script>
     // Don't register the service worker
     // until the page has fully loaded
-    window.addEventListener("load", () => {
-      // Is service worker available?
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("serviceworker.js")
-          .then(() => {
-            console.log("Service worker registered!");
-          })
-          .catch((error) => {
-            console.warn("Error registering service worker:");
-            console.warn(error);
-          });
-      }
-    });
-  </script>
+    // window.addEventListener("load", () => {
+    //   // Is service worker available?
+    //   if ("serviceWorker" in navigator) {
+    //     navigator.serviceWorker
+    //       .register("serviceworker.js")
+    //       .then(() => {
+    //         console.log("Service worker registered!");
+    //       })
+    //       .catch((error) => {
+    //         console.warn("Error registering service worker:");
+    //         console.warn(error);
+    //       });
+    //   }
+    // });
+  </script> -->
 </html>
