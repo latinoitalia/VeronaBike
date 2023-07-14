@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="manifest" href="manifest.json" />
+
     <link rel="icon" href="favicon.ico" />
     <meta name="theme-color" content="#00A2E8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -252,23 +252,5 @@
         zoomlevel = e.target._zoom;
       });
     }
-  </script>
-  <script>
-    // Don't register the service worker
-    // until the page has fully loaded
-    window.addEventListener("load", () => {
-      // Is service worker available?
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("serviceworker.js")
-          .then(() => {
-            console.log("Service worker registered!");
-          })
-          .catch((error) => {
-            console.warn("Error registering service worker:");
-            console.warn(error);
-          });
-      }
-    });
   </script>
 </html>
