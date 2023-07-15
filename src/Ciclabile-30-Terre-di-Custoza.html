@@ -65,31 +65,32 @@
           <div id="demo"></div>
           <h3 style="text-align: center">
             <span style="border-bottom: #22b14c 3px solid"
-              >Ciclabile 29 Bussolengo, Castelnuovo</span
+              >Ciclabile 30 Bussolengo, Valeggio</span
             >
           </h3>
           <h4 style="text-align: center">
             Ciclabile ufficiale Terre di Custoza,<br />Bike e trekking a
             Sommacampagna<br />
-            18Km, dislivello 170m
+            22Km, dislivello 321m
           </h4>
 
           <h4>show tour in</h4>
 
           <br />
+
           <a
-            href="https://www.komoot.com/it-it/tour/1205339619?ref=wtd"
-            target="_blank"
-            ><img class="komootsvg" src="komoot.svg" /><span
-              >Komoot <i class="bi bi-arrow-right-square"></i></span
-          ></a>
-          <br />
-          <a
-            href="https://www.alltrails.com/it-it/explore/map/ciclabile-29-terre-di-custoza-74c4481?u=m&sh=awpf2v"
+            href=" https://www.alltrails.com/explore/map/ciclabile-30-terre-di-custoza-983a33a"
             target="_blank"
             ><img src="alltrails.png" class="wikiloc" /><span
               >AllTrails <i class="bi bi-arrow-right-square"></i></span
           ></a>
+          <!--  <a
+            href="https://www.komoot.com/it-it/tour/1213878467?ref=wtd"
+            target="_blank"
+            ><img class="komootsvg" src="komoot.svg" /><span
+              >Komoot <i class="bi bi-arrow-right-square"></i></span
+          ></a> -->
+
           <br /><br /><br />
           <div class="container-fluid">
             <div class="row">
@@ -178,7 +179,7 @@
         }
       ).addTo(map);
 
-      fetch("29.geojson")
+      fetch("30.geojson")
         .then((res) => res.json())
         .then((data) => {
           L.geoJson(data, {
@@ -187,7 +188,7 @@
             },
           })
             .addTo(map)
-            .bindTooltip("ciclabile 29");
+            .bindTooltip("ciclabile 30");
         });
 
       map.on("zoomend", function (e) {

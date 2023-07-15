@@ -414,6 +414,32 @@
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
+        html: "35",
+        iconSize: [25, 20],
+      });
+      var c35 = L.marker([45.44, 10.8365], { icon: blIcon }).on(
+        "click",
+        function (ev) {
+          event.preventDefault();
+          window.location.href = "Ciclabile-35-Terre-di-Custoza.html";
+        }
+      );
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
+        html: "30",
+        iconSize: [25, 20],
+      });
+      var c30 = L.marker([45.44, 10.794], { icon: blIcon }).on(
+        "click",
+        function (ev) {
+          event.preventDefault();
+          window.location.href = "Ciclabile-30-Terre-di-Custoza.html";
+        }
+      );
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
         html: "bicipolitana",
         iconSize: [70, 20],
       });
@@ -865,6 +891,66 @@
             });
         });
 
+      fetch("35.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "#22B14C", weight: 3, opacity: 1 };
+            },
+            pane: "local",
+          })
+            .addTo(map)
+            .bindTooltip(
+              "Ciclabile 35 Terre di Custoza Bussolengo Sommacampagna"
+            )
+            .on("click", function (ev) {
+              event.preventDefault();
+              window.location.href = "Ciclabile-35-Terre-di-Custoza.html";
+            })
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                weight: 10, //or whatever style you wish to use;
+              });
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                weight: 3, //or whatever style you wish to use;
+              });
+            });
+        });
+
+      fetch("30.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "#22B14C", weight: 3, opacity: 1 };
+            },
+            pane: "local",
+          })
+            .addTo(map)
+            .bindTooltip(
+              "Ciclabile 30 Terre di Custoza Bussolengo Sommacampagna"
+            )
+            .on("click", function (ev) {
+              event.preventDefault();
+              window.location.href = "Ciclabile-30-Terre-di-Custoza.html";
+            })
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                weight: 10, //or whatever style you wish to use;
+              });
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                weight: 3, //or whatever style you wish to use;
+              });
+            });
+        });
+
       fetch("vr.geojson")
         .then((res) => res.json())
         .then((data) => {
@@ -930,11 +1016,15 @@
           bicipo.addTo(map);
           c29.addTo(map);
           c29a.addTo(map);
+          c35.addTo(map);
+          c30.addTo(map);
         } else {
           vigne.remove();
           bicipo.remove();
           c29.remove();
           c29a.remove();
+          c35.remove();
+          c30.remove();
         }
         if (map.getZoom() > 9) {
           vrmn.addTo(map);
