@@ -573,6 +573,18 @@
 
       var blIcon = L.divIcon({
         className: "bl-div-icon",
+        html: "Destra Po",
+        iconSize: [65, 20],
+      });
+      var aidad = L.marker([45.0515, 11.2], { icon: blIcon })
+        .addTo(map)
+        .on("click", function (ev) {
+          event.preventDefault();
+          window.location.href = "destrapo.html";
+        });
+
+      var blIcon = L.divIcon({
+        className: "bl-div-icon",
         html: "Claudia Augusta",
         iconSize: [100, 20],
       });
@@ -790,6 +802,32 @@
             });
         });
 
+      fetch("destrapo.geojson")
+        .then((res) => res.json())
+        .then((data) => {
+          // add GeoJSON layer to the map once the file is loaded
+          L.geoJson(data, {
+            style: function (feature) {
+              return { color: "red", weight: 3, opacity: 1 };
+            },
+          })
+            .addTo(map)
+            .bindTooltip("Ciclovia Destra Po")
+            .on("click", function (ev) {
+              event.preventDefault();
+              window.location.href = "destrapo.html";
+            })
+            .on("mouseover", function (ev) {
+              this.setStyle({
+                weight: 10, //or whatever style you wish to use;
+              });
+            })
+            .on("mouseout", function () {
+              this.setStyle({
+                weight: 3, //or whatever style you wish to use;
+              });
+            });
+        });
       fetch("29.geojson")
         .then((res) => res.json())
         .then((data) => {
