@@ -869,14 +869,14 @@
         .then((res) => res.json())
         .then((data) => {
           // add GeoJSON layer to the map once the file is loaded
-          L.geoJson(data, {
+          var vr = L.geoJson(data, {
             style: function (feature) {
               return { color: "#22b14c", weight: 5, opacity: 1 };
             },
             pane: "local",
           })
-            .addTo(map)
             .bindTooltip("Bicipolitana")
+            .addTo(map)
             .on("click", function (ev) {
               event.preventDefault();
               window.location.href = "verona-bicipolitana.html";
