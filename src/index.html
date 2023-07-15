@@ -843,7 +843,7 @@
           // add GeoJSON layer to the map once the file is loaded
           L.geoJson(data, {
             style: function (feature) {
-              return { color: "#22B14C", weight: 5, opacity: 1 };
+              return { color: "#22B14C", weight: 3, opacity: 1 };
             },
             pane: "local",
           })
@@ -860,7 +860,7 @@
             })
             .on("mouseout", function () {
               this.setStyle({
-                weight: 5, //or whatever style you wish to use;
+                weight: 3, //or whatever style you wish to use;
               });
             });
         });
@@ -871,7 +871,7 @@
           // add GeoJSON layer to the map once the file is loaded
           var vr = L.geoJson(data, {
             style: function (feature) {
-              return { color: "#22b14c", weight: 5, opacity: 1 };
+              return { color: "#22b14c", weight: 3, opacity: 1 };
             },
             pane: "local",
           })
@@ -883,12 +883,12 @@
             })
             .on("mouseover", function (ev) {
               this.setStyle({
-                weight: 10, //or whatever style you wish to use;
+                weight: 8, //or whatever style you wish to use;
               });
             })
             .on("mouseout", function () {
               this.setStyle({
-                weight: 5, //or whatever style you wish to use;
+                weight: 3, //or whatever style you wish to use;
               });
             });
         });
@@ -899,7 +899,7 @@
           // add GeoJSON layer to the map once the file is loaded
           L.geoJson(data, {
             style: function (feature) {
-              return { color: "#22b14c", weight: 5, opacity: 1 };
+              return { color: "#22b14c", weight: 3, opacity: 1 };
             },
             pane: "local",
           })
@@ -916,7 +916,7 @@
             })
             .on("mouseout", function () {
               this.setStyle({
-                weight: 5, //or whatever style you wish to use;
+                weight: 3, //or whatever style you wish to use;
               });
             });
         });
