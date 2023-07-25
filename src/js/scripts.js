@@ -320,7 +320,7 @@ function addLayer() {
 
   var blIcon = L.divIcon({
     className: "bl-div-icon",
-    html: "EV8 Destra Po",
+    html: "EV8",
     iconSize: [90, 20],
   });
   var aidad = L.marker([45.0515, 11.2], { icon: blIcon })
