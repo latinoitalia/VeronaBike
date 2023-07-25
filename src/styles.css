@@ -19,11 +19,11 @@ main > h1 {
   margin: 0;
   border: 0;
   padding: 0;
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(200, 200, 200, 0.1);
 }
 
 .outsetmenu{
-  box-shadow: 5px 5px 20px #463838; 
+  box-shadow: 5px 5px 20px #b3b3b3; 
   background-color: white;
   padding: 5px;
   
