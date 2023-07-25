@@ -93,13 +93,12 @@ function addLayer() {
     html: "Adige sud",
     iconSize: [65, 20],
   });
-  var adige = L.marker([45.32, 11.265], { icon: blIcon }).on(
-    "click",
-    function (ev) {
+  var adige = L.marker([45.32, 11.265], { icon: blIcon })
+    .addTo(map)
+    .on("click", function (ev) {
       preventDefault();
       window.location.href = "verona-zevio-fiume-adige.html";
-    }
-  );
+    });
 
   var blIcon = L.divIcon({
     className: "bl-div-icon",
@@ -215,13 +214,12 @@ function addLayer() {
     html: "EV7",
     iconSize: [35, 20],
   });
-  var ev7a = L.marker([45.28, 10.73], { icon: blIcon }).on(
-    "click",
-    function (ev) {
+  var ev7a = L.marker([45.28, 10.73], { icon: blIcon })
+    .addTo(map)
+    .on("click", function (ev) {
       preventDefault();
       window.location.href = "eurovelo-7.html";
-    }
-  );
+    });
   var blIcon = L.divIcon({
     className: "bl-div-icon",
     html: "EV7",
@@ -264,13 +262,12 @@ function addLayer() {
     html: "EV7",
     iconSize: [35, 20],
   });
-  var ev7e = L.marker([45.62, 10.857], { icon: blIcon }).on(
-    "click",
-    function (ev) {
+  var ev7e = L.marker([45.62, 10.857], { icon: blIcon })
+    .addTo(map)
+    .on("click", function (ev) {
       preventDefault();
       window.location.href = "eurovelo-7.html";
-    }
-  );
+    });
 
   var blIcon = L.divIcon({
     className: "bl-div-icon",
@@ -365,7 +362,7 @@ function addLayer() {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "blue", weight: 3, opacity: 1 };
+          return { color: "BlueViolet", weight: 3, opacity: 1 };
         },
         pane: "local",
       })
@@ -400,7 +397,7 @@ function addLayer() {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "blue", weight: 3, opacity: 1 };
+          return { color: "BlueViolet", weight: 3, opacity: 1 };
         },
         pane: "local",
       })
@@ -436,7 +433,7 @@ function addLayer() {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "red", weight: 3, opacity: 1 };
+          return { color: "BlueViolet", weight: 3, opacity: 1 };
         },
       })
         .addTo(map)
@@ -503,7 +500,7 @@ function addLayer() {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "#22B14C", weight: 3, opacity: 1 };
+          return { color: "blue", weight: 3, opacity: 1 };
         },
         pane: "local",
       })
@@ -521,7 +518,7 @@ function addLayer() {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "#22B14C", weight: 3, opacity: 1 };
+          return { color: "blue", weight: 3, opacity: 1 };
         },
         pane: "local",
       })
@@ -539,7 +536,7 @@ function addLayer() {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "#22B14C", weight: 3, opacity: 1 };
+          return { color: "blue", weight: 3, opacity: 1 };
         },
         pane: "local",
       })
@@ -557,7 +554,7 @@ function addLayer() {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "#22b14c", weight: 3, opacity: 1 };
+          return { color: "blue", weight: 3, opacity: 1 };
         },
         pane: "local",
       })
@@ -591,29 +588,27 @@ function addLayer() {
     if (map.getZoom() > 9) {
       vrmn.addTo(map);
       claudia.addTo(map);
-      adige.addTo(map);
+
       cdra.addTo(map);
       cdrb.addTo(map);
       aidab.addTo(map);
       aidac.addTo(map);
-      ev7a.addTo(map);
+
       ev7b.addTo(map);
       ev7c.addTo(map);
       ev7d.addTo(map);
-      ev7e.addTo(map);
     } else {
       vrmn.remove();
       claudia.remove();
-      adige.remove();
+
       cdra.remove();
       cdrb.remove();
       aidab.remove();
       aidac.remove();
-      ev7a.remove();
+
       ev7b.remove();
       ev7c.remove();
       ev7d.remove();
-      ev7e.remove();
     }
   });
 }

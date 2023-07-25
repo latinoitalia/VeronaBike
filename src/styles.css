@@ -92,3 +92,7 @@ main > h1 {
     width: 20px;
     height: 20px;
   }
+
+  .btnwidth{
+    width: 300px;
+  }
