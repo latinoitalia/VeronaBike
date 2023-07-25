@@ -96,3 +96,8 @@ main > h1 {
   .btnwidth{
     width: 250px;
   }
+
+  .btn-regionali{
+    background-color: darkmagenta;
+    color: white;
+  }
