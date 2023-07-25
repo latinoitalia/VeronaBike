@@ -2,12 +2,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html, body {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
-}
 
 main {
   margin: auto;
@@ -20,6 +14,21 @@ main > h1 {
   font-size: 3.5em;
 }
  */
+
+ html, body {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.outsetmenu{
+  box-shadow: 5px 5px 20px #463838; 
+  background-color: white;
+  padding: 5px;
+  
+}
+
 .responsive-map {
   position: relative;
   padding-bottom: 75%;
