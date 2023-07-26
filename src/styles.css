@@ -82,9 +82,14 @@ main > h1 {
     color: red;
     }
 
-    infosvg{
+    .infosvg{
       width: 20px;
       height: 20px;
+      color: blue;
+    }
+
+    .gpsicon{
+     
       color: blue;
     }
 
