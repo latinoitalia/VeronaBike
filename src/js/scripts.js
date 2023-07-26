@@ -53,17 +53,36 @@ function getMap() {
     console.log(e.target._zoom);
     zoomlevel = e.target._zoom;
   });
+  map.on("click", function (e) {
+    console.log("map click");
+    if (map.customControl) {
+      let cont = map.customControl.getContainer();
+      console.log(center);
+      center = false;
+      cont.style.backgroundColor = "white";
+      cont.style.color = "black";
+    }
+  });
 
   Watermark = L.Control.extend({
     onAdd: function (map) {
+      map.customControl = this;
       var container = L.DomUtil.create("input");
       container.type = "button";
       container.title = "center";
       container.value = "center";
-      container.style.backgroundColor = "blue";
-      container.style.color = "white";
 
-      container.onclick = function () {
+      if (center) {
+        container.style.backgroundColor = "blue";
+        container.style.color = "white";
+      } else {
+        container.style.backgroundColor = "white";
+        container.style.color = "black";
+      }
+
+      container.onclick = function (e) {
+        L.DomEvent.stopPropagation(e);
+        console.log("buttonClicked: " + center);
         center = !center;
         if (center) {
           container.style.backgroundColor = "blue";
@@ -72,7 +91,6 @@ function getMap() {
           container.style.backgroundColor = "white";
           container.style.color = "black";
         }
-        console.log("buttonClicked: " + center);
       };
 
       return container;
