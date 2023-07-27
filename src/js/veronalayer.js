@@ -1,3 +1,5 @@
+var layerGroup = L.layerGroup();
+
 function addEv7() {
   var ev7Icon = L.divIcon({
     className: "bl-div-icon",
@@ -187,14 +189,15 @@ function addI1() {
     });
 }
 
-function addCludiaAugusta() {
+function addCludiaAugusta(show) {
+  var ccalg = L.featureGroup();
   var ccaIcon = L.divIcon({
     className: "bl-div-icon",
     html: "Claudia Augusta",
     iconSize: [100, 20],
   });
   var claudia = L.marker([45.18, 11.0611], { icon: ccaIcon })
-    .addTo(map)
+    .addTo(ccalg)
     .on("click", function (ev) {
       preventDefault();
       window.location.href = "ciclovia-claudia-augusta.html";
@@ -208,30 +211,36 @@ function addCludiaAugusta() {
         },
         pane: "local",
       })
-        .addTo(map)
+        .addTo(ccalg)
 
         .on("click", function (ev) {
           preventDefault();
           window.location.href = "ciclovia-claudia-augusta.html";
         });
     });
+
+  layerGroup.addLayer(ccalg);
+  if (show) {
+    map.addLayer(layerGroup);
+  }
 }
 
-function addCdr() {
+function addCdr(show) {
+  var cdrlg = L.featureGroup();
   var cdrIcon = L.divIcon({
     className: "bl-div-icon",
     html: "CDR",
     iconSize: [33, 20],
   });
   var cdra = L.marker([45.35, 10.8], { icon: cdrIcon })
-    .addTo(map)
+    .addTo(cdrlg)
     .on("click", function (ev) {
       preventDefault();
       window.location.href = "ciclovia-delle-risorgive.html";
     });
 
   var cdrb = L.marker([45.365, 11.06], { icon: cdrIcon })
-    .addTo(map)
+    .addTo(cdrlg)
     .on("click", function (ev) {
       preventDefault();
       window.location.href = "ciclovia-delle-risorgive.html";
@@ -246,13 +255,18 @@ function addCdr() {
         },
         pane: "local",
       })
-        .addTo(map)
+        .addTo(cdrlg)
 
         .on("click", function (ev) {
           preventDefault();
           window.location.href = "ciclovia-delle-risorgive.html";
         });
     });
+
+  layerGroup.addLayer(cdrlg);
+  if (show) {
+    map.addLayer(layerGroup);
+  }
 }
 
 function addAdige() {
@@ -317,31 +331,34 @@ function addVeronaMantova() {
     });
 }
 
-function addTerreDiCustoza() {
+function addTerreDiCustoza(show) {
+  var custoza = L.featureGroup();
+
   var vigneIcon = L.divIcon({
     className: "bl-div-icon",
     html: "vigne e parchi",
     iconSize: [85, 20],
   });
   var vigne = L.marker([45.474, 10.755], { icon: vigneIcon })
-    .addTo(map)
+    .addTo(custoza)
     .on("click", function (ev) {
       preventDefault();
       window.location.href = "bike-tra-vigne-e-parchi-gabanel.html";
     });
+
   var blc29Icon = L.divIcon({
     className: "bl-div-icon",
     html: "29",
     iconSize: [25, 20],
   });
   var c29 = L.marker([45.42, 10.7565], { icon: blc29Icon })
-    .addTo(map)
+    .addTo(custoza)
     .on("click", function (ev) {
       preventDefault();
       window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
     });
   var c29a = L.marker([45.48, 10.8065], { icon: blc29Icon })
-    .addTo(map)
+    .addTo(custoza)
     .on("click", function (ev) {
       preventDefault();
       window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
@@ -353,7 +370,7 @@ function addTerreDiCustoza() {
     iconSize: [25, 20],
   });
   var c35 = L.marker([45.44, 10.8365], { icon: c35Icon })
-    .addTo(map)
+    .addTo(custoza)
     .on("click", function (ev) {
       preventDefault();
       window.location.href = "Ciclabile-35-Terre-di-Custoza.html";
@@ -364,13 +381,13 @@ function addTerreDiCustoza() {
     html: "30",
     iconSize: [25, 20],
   });
-  var c30 = L.marker([45.44, 10.794], { icon: c30Icon }).on(
-    "click",
-    function (ev) {
+  var c30 = L.marker([45.44, 10.794], { icon: c30Icon })
+    .addTo(custoza)
+    .on("click", function (ev) {
       preventDefault();
       window.location.href = "Ciclabile-30-Terre-di-Custoza.html";
-    }
-  );
+    });
+
   fetch("29.geojson")
     .then((res) => res.json())
     .then((data) => {
@@ -381,7 +398,7 @@ function addTerreDiCustoza() {
         },
         pane: "local",
       })
-        .addTo(map)
+        .addTo(custoza)
 
         .on("click", function (ev) {
           preventDefault();
@@ -399,7 +416,7 @@ function addTerreDiCustoza() {
         },
         pane: "local",
       })
-        .addTo(map)
+        .addTo(custoza)
 
         .on("click", function (ev) {
           preventDefault();
@@ -417,7 +434,7 @@ function addTerreDiCustoza() {
         },
         pane: "local",
       })
-        .addTo(map)
+        .addTo(custoza)
 
         .on("click", function (ev) {
           preventDefault();
@@ -435,53 +452,32 @@ function addTerreDiCustoza() {
         },
         pane: "local",
       })
-        .addTo(map)
+        .addTo(custoza)
 
         .on("click", function (ev) {
           preventDefault();
           window.location.href = "bike-tra-vigne-e-parchi-gabanel.html";
         });
     });
+
+  layerGroup.addLayer(custoza);
+  if (show) {
+    map.addLayer(layerGroup);
+  }
+
+  //map.removeLayer(layerGroup);
 }
 
-function addIconZoom() {
+function layerZoom() {
   map.on("zoomend", function (e) {
     console.log(e.target._zoom);
     zoomlevel = e.target._zoom;
 
-    if (map.getZoom() > 11) {
-      vigne.addTo(map);
-      c29.addTo(map);
-      c29a.addTo(map);
-      c35.addTo(map);
-      c30.addTo(map);
+    if (map.getZoom() > 10) {
+      console.log("maggiore di 10");
+      map.addLayer(layerGroup);
     } else {
-      vigne.remove();
-      c29.remove();
-      c29a.remove();
-      c35.remove();
-      c30.remove();
-    }
-    if (map.getZoom() > 9) {
-      vrmn.addTo(map);
-      claudia.addTo(map);
-      cdra.addTo(map);
-      cdrb.addTo(map);
-      aidab.addTo(map);
-      aidac.addTo(map);
-      ev7b.addTo(map);
-      ev7c.addTo(map);
-      ev7d.addTo(map);
-    } else {
-      vrmn.remove();
-      claudia.remove();
-      cdra.remove();
-      cdrb.remove();
-      aidab.remove();
-      aidac.remove();
-      ev7b.remove();
-      ev7c.remove();
-      ev7d.remove();
+      map.removeLayer(layerGroup);
     }
   });
 }

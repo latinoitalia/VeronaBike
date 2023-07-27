@@ -11,6 +11,7 @@ var map;
 var circle;
 var zoomlevel = 10;
 var viewCenter = [45.42, 10.98];
+let viewMinZoom = 9;
 let center = true;
 
 mobileAndTabletCheck = function () {
@@ -29,12 +30,15 @@ mobileAndTabletCheck = function () {
   return check;
 };
 
-function getMap(mapcenter, mapzoom) {
+function getMap(mapcenter, mapzoom, mapminzoom) {
   if (mapcenter != undefined) {
     viewCenter = mapcenter;
   }
   if (mapzoom != undefined) {
     zoomlevel = mapzoom;
+  }
+  if (mapminzoom != undefined) {
+    viewMinZoom = mapminzoom;
   }
 
   console.log("passo da getmap");
@@ -51,16 +55,13 @@ function getMap(mapcenter, mapzoom) {
     "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
       maxZoom: 18,
-      minZoom: 9,
+      minZoom: viewMinZoom,
       crossOrigin: "",
       attribution:
         '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }
   ).addTo(map);
-  map.on("zoomend", function (e) {
-    console.log(e.target._zoom);
-    zoomlevel = e.target._zoom;
-  });
+
   map.on("click", function (e) {
     console.log("map click");
     if (map.customControl) {
