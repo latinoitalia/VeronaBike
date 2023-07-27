@@ -10,6 +10,7 @@ var lon;
 var map;
 var circle;
 var zoomlevel = 10;
+var viewCenter = [45.42, 10.98];
 let center = true;
 
 mobileAndTabletCheck = function () {
@@ -28,10 +29,17 @@ mobileAndTabletCheck = function () {
   return check;
 };
 
-function getMap() {
+function getMap(mapcenter, mapzoom) {
+  if (mapcenter != undefined) {
+    viewCenter = mapcenter;
+  }
+  if (mapzoom != undefined) {
+    zoomlevel = mapzoom;
+  }
+
   console.log("passo da getmap");
   map = L.map("map");
-  map.setView([45.42, 10.98], zoomlevel);
+  map.setView(viewCenter, zoomlevel);
   map.addControl(new L.Control.Fullscreen());
   map.createPane("puntatore");
   map.getPane("puntatore").style.zIndex = 650;

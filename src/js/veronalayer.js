@@ -323,45 +323,41 @@ function addTerreDiCustoza() {
     html: "vigne e parchi",
     iconSize: [85, 20],
   });
-  var vigne = L.marker([45.474, 10.755], { icon: vigneIcon }).on(
-    "click",
-    function (ev) {
+  var vigne = L.marker([45.474, 10.755], { icon: vigneIcon })
+    .addTo(map)
+    .on("click", function (ev) {
       preventDefault();
       window.location.href = "bike-tra-vigne-e-parchi-gabanel.html";
-    }
-  );
+    });
   var blc29Icon = L.divIcon({
     className: "bl-div-icon",
     html: "29",
     iconSize: [25, 20],
   });
-  var c29 = L.marker([45.42, 10.7565], { icon: blc29Icon }).on(
-    "click",
-    function (ev) {
+  var c29 = L.marker([45.42, 10.7565], { icon: blc29Icon })
+    .addTo(map)
+    .on("click", function (ev) {
       preventDefault();
       window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
-    }
-  );
-  var c29a = L.marker([45.48, 10.8065], { icon: blc29Icon }).on(
-    "click",
-    function (ev) {
+    });
+  var c29a = L.marker([45.48, 10.8065], { icon: blc29Icon })
+    .addTo(map)
+    .on("click", function (ev) {
       preventDefault();
       window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
-    }
-  );
+    });
 
   var c35Icon = L.divIcon({
     className: "bl-div-icon",
     html: "35",
     iconSize: [25, 20],
   });
-  var c35 = L.marker([45.44, 10.8365], { icon: c35Icon }).on(
-    "click",
-    function (ev) {
+  var c35 = L.marker([45.44, 10.8365], { icon: c35Icon })
+    .addTo(map)
+    .on("click", function (ev) {
       preventDefault();
       window.location.href = "Ciclabile-35-Terre-di-Custoza.html";
-    }
-  );
+    });
 
   var c30Icon = L.divIcon({
     className: "bl-div-icon",
