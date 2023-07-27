@@ -77,14 +77,14 @@
         <main>
           <div id="map" class="outsetmenu"></div>
           <div class="mt-3 outsetmenu">
-            <h2 class="text-center mb-0">Itinerari Nazionali</h2>
+            <h2 class="text-center mb-0">Itinerari Nazionali e Regionali</h2>
             <h6 class="text-center text-dark">
-              Only official bike routes provincia di Verona, Veneto
+              Only official bike routes, gpx and video
             </h6>
           </div>
           <div class="mt-3 outsetmenu">
             <div class="row">
-              <div class="mt-1 col-12 col-sm-12 col-md">
+              <div class="mt-1 col-12 col-sm-12 col-md-4">
                 <span style="background-color: darkmagenta; color: white"
                   >&nbspEV7&nbsp;</span
                 >
@@ -95,7 +95,7 @@
                   >Route Eurovelo 7</a
                 >
               </div>
-              <div class="mt-1 col-12 col-sm-12 col-md">
+              <div class="mt-1 col-12 col-sm-12 col-md-4">
                 <span style="background-color: darkmagenta; color: white"
                   >&nbspEV8&nbsp;</span
                 >
@@ -105,7 +105,7 @@
                   >Route Eurovelo 8</a
                 >
               </div>
-              <div class="mt-1 col-12 col-sm-12 col-md">
+              <div class="mt-1 col-12 col-sm-12 col-md-4">
                 <span style="background-color: darkmagenta; color: white"
                   >&nbspAIDA&nbsp;</span
                 >
@@ -113,6 +113,42 @@
                 <img class="komootsvg" src="komoot.svg" />
                 <a href="aida.html" class="btn btn-danger d-grid btn-lg mt-1"
                   >Ciclovia AIDA</a
+                >
+              </div>
+              <div class="mt-1 col-12 col-sm-12 col-md-4">
+                <span style="background-color: darkmagenta; color: white"
+                  >&nbspI1&nbsp;</span
+                >&nbsp;<span style="background-color: darkmagenta; color: white"
+                  >&nbspI2&nbsp;</span
+                >
+                <img class="komootsvg" src="komoot.svg" />
+                <img class="komootsvg" src="outdoor.png" />
+                <a
+                  href="regione-veneto-i1.html"
+                  class="btn btn-regionali d-grid btn-lg mt-1"
+                  >Itinerario I1 - I2</a
+                >
+              </div>
+              <div class="mt-1 col-12 col-sm-12 col-md-4">
+                <span style="background-color: darkmagenta; color: white"
+                  >&nbspAdige sud&nbsp;</span
+                >
+                <img class="komootsvg" src="komoot.svg" />
+
+                <a
+                  href="verona-zevio-fiume-adige.html"
+                  class="btn btn-regionali d-grid btn-lg mt-1"
+                  >Ciclovia Adige sud</a
+                >
+              </div>
+              <div class="mt-1 col-12 col-sm-12 col-md-4">
+                <span style="background-color: darkmagenta; color: white"
+                  >&nbspVerona Mantova&nbsp;</span
+                >
+                <img class="komootsvg" src="komoot.svg" />
+
+                <a href="vrmn.html" class="btn btn-regionali d-grid btn-lg mt-1"
+                  >Verona Mantova</a
                 >
               </div>
             </div>
@@ -150,11 +186,15 @@
   </body>
 
   <script src="js/scripts.js"></script>
-  <script src="js/layer.js"></script>
+  <script src="js/veronalayer.js"></script>
   <script>
+    getMap();
     //zoom = addIconZoom();
     ev7 = addEv7();
     ev8 = addEv8();
     aida = addAida();
+    const i1 = addI1();
+    const adige = addAdige();
+    const VeronaMantova = addVeronaMantova();
   </script>
 </html>

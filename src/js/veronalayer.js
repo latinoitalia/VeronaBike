@@ -175,7 +175,7 @@ function addI1() {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "BlueViolet", weight: 3, opacity: 1 };
+          return { color: "darkmagenta", weight: 3, opacity: 1 };
         },
       })
         .addTo(map)
@@ -193,13 +193,12 @@ function addCludiaAugusta() {
     html: "Claudia Augusta",
     iconSize: [100, 20],
   });
-  var claudia = L.marker([45.28, 10.994], { icon: ccaIcon }).on(
-    "click",
-    function (ev) {
+  var claudia = L.marker([45.18, 11.0611], { icon: ccaIcon })
+    .addTo(map)
+    .on("click", function (ev) {
       preventDefault();
       window.location.href = "ciclovia-claudia-augusta.html";
-    }
-  );
+    });
   fetch("cca.geojson")
     .then((res) => res.json())
     .then((data) => {
@@ -224,21 +223,19 @@ function addCdr() {
     html: "CDR",
     iconSize: [33, 20],
   });
-  var cdra = L.marker([45.357, 10.7565], { icon: cdrIcon }).on(
-    "click",
-    function (ev) {
+  var cdra = L.marker([45.35, 10.8], { icon: cdrIcon })
+    .addTo(map)
+    .on("click", function (ev) {
       preventDefault();
       window.location.href = "ciclovia-delle-risorgive.html";
-    }
-  );
+    });
 
-  var cdrb = L.marker([45.365, 11.06], { icon: cdrIcon }).on(
-    "click",
-    function (ev) {
+  var cdrb = L.marker([45.365, 11.06], { icon: cdrIcon })
+    .addTo(map)
+    .on("click", function (ev) {
       preventDefault();
       window.location.href = "ciclovia-delle-risorgive.html";
-    }
-  );
+    });
   fetch("cdr.geojson")
     .then((res) => res.json())
     .then((data) => {
@@ -277,7 +274,7 @@ function addAdige() {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "BlueViolet", weight: 3, opacity: 1 };
+          return { color: "darkmagenta", weight: 3, opacity: 1 };
         },
         pane: "local",
       })
@@ -295,20 +292,19 @@ function addVeronaMantova() {
     html: "Verona Mantova",
     iconSize: [100, 20],
   });
-  var vrmn = L.marker([45.32, 10.857], { icon: vrmnIcon }).on(
-    "click",
-    function (ev) {
+  var vrmn = L.marker([45.22, 10.817], { icon: vrmnIcon })
+    .addTo(map)
+    .on("click", function (ev) {
       preventDefault();
       window.location.href = "ciclovia-verona-mantova.html";
-    }
-  );
+    });
   fetch("vrma.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "BlueViolet", weight: 3, opacity: 1 };
+          return { color: "darkmagenta", weight: 3, opacity: 1 };
         },
         pane: "local",
       })

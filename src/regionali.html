@@ -77,38 +77,47 @@
         <main>
           <div id="map" class="outsetmenu"></div>
           <div class="mt-3 outsetmenu">
-            <h2 class="text-center mb-0">Verona Bike home</h2>
+            <h2 class="text-center mb-0">Itinerari Nazionali</h2>
             <h6 class="text-center text-dark">
-              Only official bike routes,gpx and video
+              Only official bike routes and video
             </h6>
           </div>
           <div class="mt-3 outsetmenu">
             <div class="row">
-              <div class="mt-1 col-12">
+              <div class="mt-1 col-12 col-sm-12 col-md">
+                <span style="background-color: darkmagenta; color: white"
+                  >&nbspEV7&nbsp;</span
+                >
+                <img class="komootsvg" src="komoot.svg" />
                 <a
-                  href="nazionali.html"
+                  href="eurovelo-7.html"
                   class="btn btn-danger d-grid btn-lg mt-1"
-                  >Itinerari nazionali e regionali</a
+                  >Route Eurovelo 7</a
+                >
+              </div>
+              <div class="mt-1 col-12 col-sm-12 col-md">
+                <span style="background-color: darkmagenta; color: white"
+                  >&nbspEV8&nbsp;</span
+                >
+                <a
+                  href="destrapo.html"
+                  class="btn btn-danger d-grid btn-lg mt-1"
+                  >Route Eurovelo 8</a
+                >
+              </div>
+              <div class="mt-1 col-12 col-sm-12 col-md">
+                <span style="background-color: darkmagenta; color: white"
+                  >&nbspAIDA&nbsp;</span
+                >
+
+                <img class="komootsvg" src="komoot.svg" />
+                <a href="aida.html" class="btn btn-danger d-grid btn-lg mt-1"
+                  >Ciclovia AIDA</a
                 >
               </div>
             </div>
           </div>
-          <div class="mt-3 outsetmenu">
-            <div class="mt-1 col-12">
-              <a href="locali.html" class="btn btn-regionali d-grid btn-lg mt-1"
-                >Itinerari locali</a
-              >
-            </div>
-          </div>
-          <div class="mt-3 outsetmenu">
-            <div class="mt-1 col-12">
-              <a
-                href="terredicustoza.html"
-                class="btn btn-primary d-grid btn-lg mt-1"
-                >Terre di Custoza</a
-              >
-            </div>
-          </div>
+
           <div class="container-fluid mt-3">
             <div class="row">
               <div class="col text-center">
@@ -144,12 +153,6 @@
   <script src="js/veronalayer.js"></script>
   <script>
     getMap();
-
-    //zoom = addIconZoom();
-
-    const ev7 = addEv7();
-    const ev8 = addEv8();
-    const aida = addAida();
     const i1 = addI1();
     const adige = addAdige();
     const VeronaMantova = addVeronaMantova();
