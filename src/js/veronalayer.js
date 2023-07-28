@@ -329,6 +329,34 @@ function addVigne() {
       }).addTo(map);
     });
 }
+function addPath16() {
+  var c16Icon = L.divIcon({
+    className: "bl-div-icon",
+    html: "16",
+    iconSize: [25, 20],
+  });
+  var c16 = L.marker([45.38, 10.80155], { icon: c16Icon })
+    .addTo(map)
+    .on("click", function (ev) {
+      window.location.href = "path16.html";
+    });
+  fetch("16.geojson")
+    .then((res) => res.json())
+    .then((data) => {
+      // add GeoJSON layer to the map once the file is loaded
+      L.geoJson(data, {
+        style: function (feature) {
+          return { color: "blue", weight: 8, opacity: 1 };
+        },
+        pane: "local",
+      })
+        .addTo(map)
+
+        .on("click", function (ev) {
+          window.location.href = "path16.html";
+        });
+    });
+}
 
 function addTerreDiCustoza(show) {
   var custoza = L.featureGroup();
@@ -399,6 +427,16 @@ function addTerreDiCustoza(show) {
           window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
         });
     });
+  var c16Icon = L.divIcon({
+    className: "bl-div-icon",
+    html: "16",
+    iconSize: [25, 20],
+  });
+  var c16 = L.marker([45.38, 10.80155], { icon: c16Icon })
+    .addTo(custoza)
+    .on("click", function (ev) {
+      window.location.href = "path16.html";
+    });
 
   fetch("35.geojson")
     .then((res) => res.json())
@@ -448,6 +486,23 @@ function addTerreDiCustoza(show) {
 
         .on("click", function (ev) {
           window.location.href = "bike-tra-vigne-e-parchi.html";
+        });
+    });
+
+  fetch("16.geojson")
+    .then((res) => res.json())
+    .then((data) => {
+      // add GeoJSON layer to the map once the file is loaded
+      L.geoJson(data, {
+        style: function (feature) {
+          return { color: "blue", weight: 3, opacity: 1 };
+        },
+        pane: "local",
+      })
+        .addTo(custoza)
+
+        .on("click", function (ev) {
+          window.location.href = "path16.html";
         });
     });
 
