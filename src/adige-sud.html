@@ -77,16 +77,27 @@
         <main>
           <div id="map" class="outsetmenu"></div>
           <div class="mt-3 outsetmenu">
-            <h2 class="text-center mb-0">by bike tra vigne e parchi</h2>
-            <h5 class="text-center text-dark">terre di custoza bike park</h5>
+            <h2 class="text-center mb-0">adige sud</h2>
+            <h5 class="text-center text-dark">bicitalia ciclovie di qualità</h5>
             <h6 class="text-center text-dark">
               Only official bike routes, gpx and video
             </h6>
           </div>
           <div class="mt-3 outsetmenu">
+            <div class="row">
+              <div class="mt-1 col-12">
+                <a
+                  href="nazionali.html"
+                  class="btn btn-danger d-grid btn-lg mt-1"
+                  >national and regional tours</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 outsetmenu">
             <div class="mt-1 col-12">
-              <a href="custoza.html" class="btn btn-primary d-grid btn-lg mt-1"
-                >Terre di Custoza bike park</a
+              <a href="locali.html" class="btn btn-regionali d-grid btn-lg mt-1"
+                >local tours</a
               >
             </div>
           </div>
@@ -95,10 +106,10 @@
             <div class="row">
               <div class="mt-1 col-12 col-sm-12 col-md">
                 <div class="card mt-1">
-                  <a href="https://youtu.be/OrTfywT4eFo" target="_blank">
+                  <a href="https://youtu.be/LGUyEcGm2Uw" target="_blank">
                     <img
                       class="card-img-top"
-                      src="assets/vigne.jpg"
+                      src="assets/adigesud.jpg"
                       alt="Card image"
                     />
                   </a>
@@ -108,7 +119,7 @@
                       gps youtube video
 
                       <a
-                        href="https://youtu.be/OrTfywT4eFo"
+                        href="https://youtu.be/LGUyEcGm2Uw"
                         class="btn btn-danger"
                         target="_blank"
                         ><i class="bi bi-youtube"></i
@@ -122,7 +133,7 @@
                 <a
                   target="_blank"
                   class="btn btn-outline-secondary btn-lg"
-                  href="https://www.google.com/maps/d/u/0/edit?mid=1-YNur1EyJzVb8_8NBTOuryR7UpG5aV0&usp=sharing"
+                  href="https://www.google.com/maps/d/u/0/edit?mid=1ULFcri5u-SIZzEf7WXh07rPfFfxya9M&usp=sharing"
                 >
                   <img src="google.png" />
                   google maps</a
@@ -130,10 +141,18 @@
                 <a
                   target="_blank"
                   class="btn btn-outline-secondary btn-lg mt-2"
-                  href="https://www.komoot.com/it-it/tour/1203647576?ref=wtd"
+                  href="https://www.komoot.com/it-it/tour/1207822756?ref=wtd"
                 >
                   <img class="komootsvg" src="komoot.svg" />
                   Kommot</a
+                ><br />
+                <a
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-lg mt-2"
+                  href="https://www.outdooractive.com/it/route/cicloturismo/adige-sud-bicitalia-ciclovie-di-qualita-/273965876/?share=%7Ezwwropfk%244ossx9vo"
+                >
+                  <img class="komootsvg" src="outdoor.png" />
+                  outdooractive</a
                 >
               </div>
               <div class="mt-1 col-12 col-sm-12 col-md"></div>
@@ -160,9 +179,7 @@
         </main>
       </div>
     </div>
-    <!-- Bootstrap core JS-->
-    <!--   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-   -->
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -174,7 +191,7 @@
   <script src="js/scripts.js"></script>
   <script src="js/veronalayer.js"></script>
   <script>
-    getMap([45.46, 10.75], 12);
-    const vigne = addVigne();
+    getMap();
+    const adige = addAdige(8);
   </script>
 </html>

@@ -9,32 +9,27 @@ function addEv7() {
   var ev7a = L.marker([45.28, 10.73], { icon: ev7Icon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "eurovelo-7.html";
     });
   var ev7b = L.marker([45.38, 10.7], { icon: ev7Icon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "eurovelo-7.html";
     });
   var ev7c = L.marker([45.45, 10.695], { icon: ev7Icon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "eurovelo-7.html";
     });
   var ev7d = L.marker([45.55, 10.719], { icon: ev7Icon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "eurovelo-7.html";
     });
 
   var ev7e = L.marker([45.62, 10.857], { icon: ev7Icon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "eurovelo-7.html";
     });
   fetch("ev7.geojson")
@@ -48,7 +43,6 @@ function addEv7() {
       })
         .addTo(map)
         .on("click", function (ev) {
-          preventDefault();
           window.location.href = "eurovelo-7.html";
         });
     });
@@ -63,26 +57,22 @@ function addAida() {
   var aidaa = L.marker([45.45, 10.5515], { icon: aidaIcon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "aida.html";
     });
   var aidab = L.marker([45.412, 10.85], { icon: aidaIcon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "aida.html";
     });
   var aidac = L.marker([45.4, 11.125], { icon: aidaIcon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "aida.html";
     });
 
   var aidad = L.marker([45.53, 11.48], { icon: aidaIcon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "aida.html";
     });
 
@@ -98,7 +88,6 @@ function addAida() {
         .addTo(map)
 
         .on("click", function (ev) {
-          preventDefault();
           window.location.href = "aida.html";
         });
     });
@@ -113,7 +102,6 @@ function addEv8() {
   var ev8 = L.marker([45.0515, 11.2], { icon: ev8Icon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "destrapo.html";
     });
   fetch("destrapo.geojson")
@@ -128,7 +116,6 @@ function addEv8() {
         .addTo(map)
 
         .on("click", function (ev) {
-          preventDefault();
           window.location.href = "destrapo.html";
         });
     });
@@ -143,14 +130,12 @@ function addI1() {
   L.marker([45.469, 10.9], { icon: i1Icon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "regione-veneto-i1.html";
     });
 
   L.marker([45.55, 10.81915], { icon: i1Icon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "regione-veneto-i1.html";
     });
 
@@ -162,13 +147,11 @@ function addI1() {
   L.marker([45.477, 11.48], { icon: i2Icon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "regione-veneto-i1.html";
     });
   L.marker([45.4215, 11.2], { icon: i2Icon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "regione-veneto-i1.html";
     });
   fetch("i1.geojson")
@@ -183,7 +166,6 @@ function addI1() {
         .addTo(map)
 
         .on("click", function (ev) {
-          preventDefault();
           window.location.href = "regione-veneto-i1.html";
         });
     });
@@ -199,7 +181,6 @@ function addCludiaAugusta(show) {
   var claudia = L.marker([45.18, 11.0611], { icon: ccaIcon })
     .addTo(ccalg)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "ciclovia-claudia-augusta.html";
     });
   fetch("cca.geojson")
@@ -214,7 +195,6 @@ function addCludiaAugusta(show) {
         .addTo(ccalg)
 
         .on("click", function (ev) {
-          preventDefault();
           window.location.href = "ciclovia-claudia-augusta.html";
         });
     });
@@ -235,14 +215,12 @@ function addCdr(show) {
   var cdra = L.marker([45.35, 10.8], { icon: cdrIcon })
     .addTo(cdrlg)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "ciclovia-delle-risorgive.html";
     });
 
   var cdrb = L.marker([45.365, 11.06], { icon: cdrIcon })
     .addTo(cdrlg)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "ciclovia-delle-risorgive.html";
     });
   fetch("cdr.geojson")
@@ -258,7 +236,6 @@ function addCdr(show) {
         .addTo(cdrlg)
 
         .on("click", function (ev) {
-          preventDefault();
           window.location.href = "ciclovia-delle-risorgive.html";
         });
     });
@@ -269,7 +246,12 @@ function addCdr(show) {
   }
 }
 
-function addAdige() {
+function addAdige(lineweight) {
+  let jweight = 3;
+  if (lineweight != undefined) {
+    jweight = lineweight;
+  }
+
   var adigeIcon = L.divIcon({
     className: "bl-div-icon",
     html: "Adige sud",
@@ -278,8 +260,7 @@ function addAdige() {
   var adige = L.marker([45.32, 11.265], { icon: adigeIcon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
-      window.location.href = "verona-zevio-fiume-adige.html";
+      window.location.href = "adige-sud.html";
     });
 
   fetch("adigesud.geojson")
@@ -288,14 +269,13 @@ function addAdige() {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "darkmagenta", weight: 3, opacity: 1 };
+          return { color: "darkmagenta", weight: jweight, opacity: 1 };
         },
         pane: "local",
       })
         .addTo(map)
         .on("click", function (ev) {
-          preventDefault();
-          window.location.href = "verona-zevio-fiume-adige.html";
+          window.location.href = "adige-sud.html";
         });
     });
 }
@@ -309,7 +289,6 @@ function addVeronaMantova() {
   var vrmn = L.marker([45.22, 10.817], { icon: vrmnIcon })
     .addTo(map)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "ciclovia-verona-mantova.html";
     });
   fetch("vrma.geojson")
@@ -325,7 +304,6 @@ function addVeronaMantova() {
         .addTo(map)
 
         .on("click", function (ev) {
-          preventDefault();
           window.location.href = "ciclovia-verona-mantova.html";
         });
     });
@@ -375,13 +353,11 @@ function addTerreDiCustoza(show) {
   var c29 = L.marker([45.42, 10.7565], { icon: blc29Icon })
     .addTo(custoza)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
     });
   var c29a = L.marker([45.48, 10.8065], { icon: blc29Icon })
     .addTo(custoza)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
     });
 
@@ -393,7 +369,6 @@ function addTerreDiCustoza(show) {
   var c35 = L.marker([45.44, 10.8365], { icon: c35Icon })
     .addTo(custoza)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "Ciclabile-35-Terre-di-Custoza.html";
     });
 
@@ -405,7 +380,6 @@ function addTerreDiCustoza(show) {
   var c30 = L.marker([45.44, 10.794], { icon: c30Icon })
     .addTo(custoza)
     .on("click", function (ev) {
-      preventDefault();
       window.location.href = "Ciclabile-30-Terre-di-Custoza.html";
     });
 
@@ -422,7 +396,6 @@ function addTerreDiCustoza(show) {
         .addTo(custoza)
 
         .on("click", function (ev) {
-          preventDefault();
           window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
         });
     });
@@ -440,7 +413,6 @@ function addTerreDiCustoza(show) {
         .addTo(custoza)
 
         .on("click", function (ev) {
-          preventDefault();
           window.location.href = "Ciclabile-35-Terre-di-Custoza.html";
         });
     });
@@ -458,7 +430,6 @@ function addTerreDiCustoza(show) {
         .addTo(custoza)
 
         .on("click", function (ev) {
-          preventDefault();
           window.location.href = "Ciclabile-30-Terre-di-Custoza.html";
         });
     });
