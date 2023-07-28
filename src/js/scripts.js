@@ -12,7 +12,7 @@ var circle;
 var zoomlevel = 10;
 var viewCenter = [45.42, 10.98];
 let viewMinZoom = 9;
-let center = true;
+let center = false;
 
 mobileAndTabletCheck = function () {
   let check = false;
