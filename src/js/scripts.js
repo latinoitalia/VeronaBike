@@ -80,6 +80,7 @@ function getMap(mapcenter, mapzoom, mapminzoom) {
       container.type = "button";
       container.title = "center";
       container.value = "center";
+      container.style.height = "40px";
 
       if (center) {
         container.style.backgroundColor = "blue";

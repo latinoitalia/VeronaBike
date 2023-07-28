@@ -331,6 +331,27 @@ function addVeronaMantova() {
     });
 }
 
+function addVigne() {
+  var vigneIcon = L.divIcon({
+    className: "bl-div-icon",
+    html: "vigne e parchi",
+    iconSize: [85, 20],
+  });
+  var vigne = L.marker([45.474, 10.755], { icon: vigneIcon }).addTo(map);
+
+  fetch("bussolengo-lago.geojson")
+    .then((res) => res.json())
+    .then((data) => {
+      // add GeoJSON layer to the map once the file is loaded
+      L.geoJson(data, {
+        style: function (feature) {
+          return { color: "blue", weight: 8, opacity: 1 };
+        },
+        pane: "local",
+      }).addTo(map);
+    });
+}
+
 function addTerreDiCustoza(show) {
   var custoza = L.featureGroup();
 
@@ -342,8 +363,8 @@ function addTerreDiCustoza(show) {
   var vigne = L.marker([45.474, 10.755], { icon: vigneIcon })
     .addTo(custoza)
     .on("click", function (ev) {
-      preventDefault();
-      window.location.href = "bike-tra-vigne-e-parchi-gabanel.html";
+      console.log("vigne");
+      window.location.href = "bike-tra-vigne-e-parchi.html";
     });
 
   var blc29Icon = L.divIcon({
@@ -455,8 +476,7 @@ function addTerreDiCustoza(show) {
         .addTo(custoza)
 
         .on("click", function (ev) {
-          preventDefault();
-          window.location.href = "bike-tra-vigne-e-parchi-gabanel.html";
+          window.location.href = "bike-tra-vigne-e-parchi.html";
         });
     });
 
