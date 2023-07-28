@@ -72,6 +72,10 @@ function getMap(mapcenter, mapzoom, mapminzoom) {
       cont.style.color = "black";
     }
   });
+  map.on("zoomend", function (e) {
+    console.log("scripts zoom: " + e.target._zoom);
+    zoomlevel = e.target._zoom;
+  });
 
   Watermark = L.Control.extend({
     onAdd: function (map) {

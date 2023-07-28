@@ -461,7 +461,7 @@ function addTerreDiCustoza(show) {
 
 function layerZoom() {
   map.on("zoomend", function (e) {
-    console.log(e.target._zoom);
+    console.log("verona layer zoom: " + e.target._zoom);
     zoomlevel = e.target._zoom;
 
     if (map.getZoom() > 10) {
