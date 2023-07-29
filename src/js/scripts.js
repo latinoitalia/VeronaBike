@@ -12,7 +12,7 @@ var circle;
 var zoomlevel = 10;
 var viewCenter = [45.42, 10.98];
 let viewMinZoom = 9;
-let center = false;
+let center = true;
 
 mobileAndTabletCheck = function () {
   let check = false;
@@ -119,7 +119,44 @@ function getMap(mapcenter, mapzoom, mapminzoom) {
     return new Watermark(opts);
   };
 
-  watermark({ position: "bottomleft" }).addTo(map);
+  //watermark({ position: "bottomleft" }).addTo(map);
+
+  MyImg = L.Control.extend({
+    onAdd: function (map) {
+      map.mycustomImg = this;
+      var img = L.DomUtil.create("img");
+      img.src = "assets/location.svg";
+      img.style.height = "60px";
+      if (center) {
+        img.src = "assets/location.svg";
+      } else {
+        img.src = "assets/locationGray.svg";
+      }
+
+      img.onclick = function (e) {
+        L.DomEvent.stopPropagation(e);
+        console.log("imgClicked: " + center);
+        center = !center;
+        if (center) {
+          img.src = "assets/location.svg";
+        } else {
+          img.src = "assets/locationGray.svg";
+        }
+      };
+
+      return img;
+    },
+
+    onRemove: function (map) {
+      // Nothing to do here
+    },
+  });
+
+  myImg = function (opts) {
+    return new MyImg(opts);
+  };
+
+  myImg({ position: "bottomleft" }).addTo(map);
 }
 
 function addCircle() {

@@ -90,7 +90,9 @@ main > h1 {
 
     .gpsicon{
      
-      color: blue;
+      color: gray;
+      width: 50px;
+      height: 50px;
     }
 
   .wikiloc{
