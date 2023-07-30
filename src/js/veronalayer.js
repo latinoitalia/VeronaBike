@@ -309,13 +309,17 @@ function addVeronaMantova() {
     });
 }
 
-function addVigne() {
+function addVigne(pathLayer, pathZoom) {
   var vigneIcon = L.divIcon({
     className: "bl-div-icon",
     html: "vigne e parchi",
     iconSize: [85, 20],
   });
-  var vigne = L.marker([45.474, 10.755], { icon: vigneIcon }).addTo(map);
+  var vigne = L.marker([45.474, 10.755], { icon: vigneIcon })
+    .on("click", function (ev) {
+      window.location.href = "bike-tra-vigne-e-parchi.html";
+    })
+    .addTo(pathLayer);
 
   fetch("bussolengo-lago.geojson")
     .then((res) => res.json())
@@ -323,34 +327,36 @@ function addVigne() {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "blue", weight: 8, opacity: 1 };
+          return { color: "blue", weight: pathZoom, opacity: 1 };
         },
         pane: "local",
-      }).addTo(map);
+      }).addTo(pathLayer);
     });
 }
-function addPath16() {
+
+function addPath16(pathLayer, pathZoom) {
   var c16Icon = L.divIcon({
     className: "bl-div-icon",
     html: "16",
     iconSize: [25, 20],
   });
   var c16 = L.marker([45.38, 10.80155], { icon: c16Icon })
-    .addTo(map)
+    .addTo(pathLayer)
     .on("click", function (ev) {
       window.location.href = "path16.html";
     });
+
   fetch("16.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "blue", weight: 8, opacity: 1 };
+          return { color: "blue", weight: pathZoom, opacity: 1 };
         },
         pane: "local",
       })
-        .addTo(map)
+        .addTo(pathLayer)
 
         .on("click", function (ev) {
           window.location.href = "path16.html";
@@ -358,57 +364,21 @@ function addPath16() {
     });
 }
 
-function addTerreDiCustoza(show) {
-  var custoza = L.featureGroup();
-
-  var vigneIcon = L.divIcon({
-    className: "bl-div-icon",
-    html: "vigne e parchi",
-    iconSize: [85, 20],
-  });
-  var vigne = L.marker([45.474, 10.755], { icon: vigneIcon })
-    .addTo(custoza)
-    .on("click", function (ev) {
-      console.log("vigne");
-      window.location.href = "bike-tra-vigne-e-parchi.html";
-    });
-
+function addPath29(pathLayer, pathZoom) {
   var blc29Icon = L.divIcon({
     className: "bl-div-icon",
     html: "29",
     iconSize: [25, 20],
   });
   var c29 = L.marker([45.42, 10.7565], { icon: blc29Icon })
-    .addTo(custoza)
+    .addTo(pathLayer)
     .on("click", function (ev) {
       window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
     });
   var c29a = L.marker([45.48, 10.8065], { icon: blc29Icon })
-    .addTo(custoza)
+    .addTo(pathLayer)
     .on("click", function (ev) {
       window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
-    });
-
-  var c35Icon = L.divIcon({
-    className: "bl-div-icon",
-    html: "35",
-    iconSize: [25, 20],
-  });
-  var c35 = L.marker([45.44, 10.8365], { icon: c35Icon })
-    .addTo(custoza)
-    .on("click", function (ev) {
-      window.location.href = "Ciclabile-35-Terre-di-Custoza.html";
-    });
-
-  var c30Icon = L.divIcon({
-    className: "bl-div-icon",
-    html: "30",
-    iconSize: [25, 20],
-  });
-  var c30 = L.marker([45.44, 10.794], { icon: c30Icon })
-    .addTo(custoza)
-    .on("click", function (ev) {
-      window.location.href = "Ciclabile-30-Terre-di-Custoza.html";
     });
 
   fetch("29.geojson")
@@ -417,42 +387,28 @@ function addTerreDiCustoza(show) {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "blue", weight: 3, opacity: 1 };
+          return { color: "blue", weight: pathZoom, opacity: 1 };
         },
         pane: "local",
       })
-        .addTo(custoza)
+        .addTo(pathLayer)
 
         .on("click", function (ev) {
           window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
         });
     });
-  var c16Icon = L.divIcon({
+}
+
+function addPath30(pathLayer, pathZoom) {
+  var c30Icon = L.divIcon({
     className: "bl-div-icon",
-    html: "16",
+    html: "30",
     iconSize: [25, 20],
   });
-  var c16 = L.marker([45.38, 10.80155], { icon: c16Icon })
-    .addTo(custoza)
+  var c30 = L.marker([45.44, 10.794], { icon: c30Icon })
+    .addTo(pathLayer)
     .on("click", function (ev) {
-      window.location.href = "path16.html";
-    });
-
-  fetch("35.geojson")
-    .then((res) => res.json())
-    .then((data) => {
-      // add GeoJSON layer to the map once the file is loaded
-      L.geoJson(data, {
-        style: function (feature) {
-          return { color: "blue", weight: 3, opacity: 1 };
-        },
-        pane: "local",
-      })
-        .addTo(custoza)
-
-        .on("click", function (ev) {
-          window.location.href = "Ciclabile-35-Terre-di-Custoza.html";
-        });
+      window.location.href = "Ciclabile-30-Terre-di-Custoza.html";
     });
 
   fetch("30.geojson")
@@ -461,57 +417,59 @@ function addTerreDiCustoza(show) {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "blue", weight: 3, opacity: 1 };
+          return { color: "blue", weight: pathZoom, opacity: 1 };
         },
         pane: "local",
       })
-        .addTo(custoza)
+        .addTo(pathLayer)
 
         .on("click", function (ev) {
           window.location.href = "Ciclabile-30-Terre-di-Custoza.html";
         });
     });
+}
+function addPath35(pathLayer, pathZoom) {
+  var c35Icon = L.divIcon({
+    className: "bl-div-icon",
+    html: "35",
+    iconSize: [25, 20],
+  });
+  var c35 = L.marker([45.44, 10.8365], { icon: c35Icon })
+    .addTo(pathLayer)
+    .on("click", function (ev) {
+      window.location.href = "Ciclabile-35-Terre-di-Custoza.html";
+    });
 
-  fetch("bussolengo-lago.geojson")
+  fetch("35.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "blue", weight: 3, opacity: 1 };
+          return { color: "blue", weight: pathZoom, opacity: 1 };
         },
         pane: "local",
       })
-        .addTo(custoza)
+        .addTo(pathLayer)
 
         .on("click", function (ev) {
-          window.location.href = "bike-tra-vigne-e-parchi.html";
+          window.location.href = "Ciclabile-35-Terre-di-Custoza.html";
         });
     });
+}
 
-  fetch("16.geojson")
-    .then((res) => res.json())
-    .then((data) => {
-      // add GeoJSON layer to the map once the file is loaded
-      L.geoJson(data, {
-        style: function (feature) {
-          return { color: "blue", weight: 3, opacity: 1 };
-        },
-        pane: "local",
-      })
-        .addTo(custoza)
-
-        .on("click", function (ev) {
-          window.location.href = "path16.html";
-        });
-    });
+function addTerreDiCustoza(show) {
+  var custoza = L.featureGroup();
+  const p29 = addPath29(custoza, 3);
+  const p16 = addPath16(custoza, 3);
+  const vigne = addVigne(custoza, 3);
+  const p30 = addPath30(custoza, 3);
+  const p35 = addPath35(custoza, 3);
 
   layerGroup.addLayer(custoza);
   if (show) {
     map.addLayer(layerGroup);
   }
-
-  //map.removeLayer(layerGroup);
 }
 
 function layerZoom() {
