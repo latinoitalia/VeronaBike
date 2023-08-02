@@ -121,7 +121,7 @@ function addEv8() {
     });
 }
 
-function addI1() {
+function addI1(lineweight) {
   var i1Icon = L.divIcon({
     className: "bl-div-icon",
     html: "I1",
@@ -160,7 +160,7 @@ function addI1() {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "darkmagenta", weight: 3, opacity: 1 };
+          return { color: "darkmagenta", weight: lineweight, opacity: 1 };
         },
       })
         .addTo(map)
