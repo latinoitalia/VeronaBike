@@ -1,6 +1,6 @@
 var layerGroup = L.layerGroup();
 
-function addEv7() {
+function addEv7(lineweight) {
   var ev7Icon = L.divIcon({
     className: "bl-div-icon",
     html: "EV7",
@@ -38,7 +38,7 @@ function addEv7() {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "red", weight: 3, opacity: 1 };
+          return { color: "red", weight: lineweight, opacity: 1 };
         },
       })
         .addTo(map)
