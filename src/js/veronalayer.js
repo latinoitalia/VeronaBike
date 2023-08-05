@@ -171,7 +171,7 @@ function addI1(lineweight) {
     });
 }
 
-function addCludiaAugusta(show) {
+function addCludiaAugusta(show, lineweight) {
   var ccalg = L.featureGroup();
   var ccaIcon = L.divIcon({
     className: "bl-div-icon",
@@ -188,7 +188,7 @@ function addCludiaAugusta(show) {
     .then((data) => {
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "blue", weight: 3, opacity: 1 };
+          return { color: "blue", weight: lineweight, opacity: 1 };
         },
         pane: "local",
       })
@@ -205,7 +205,7 @@ function addCludiaAugusta(show) {
   }
 }
 
-function addCdr(show) {
+function addCdr(show, lineweight) {
   var cdrlg = L.featureGroup();
   var cdrIcon = L.divIcon({
     className: "bl-div-icon",
@@ -229,7 +229,7 @@ function addCdr(show) {
       // add GeoJSON layer to the map once the file is loaded
       L.geoJson(data, {
         style: function (feature) {
-          return { color: "blue", weight: 3, opacity: 1 };
+          return { color: "blue", weight: lineweight, opacity: 1 };
         },
         pane: "local",
       })
