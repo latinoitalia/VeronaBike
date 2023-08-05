@@ -33,8 +33,8 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-
-    <!-- <link rel="manifest" href="manifest.json" /> -->
+    <!-- 
+    <link rel="manifest" href="manifest.json" /> -->
     <meta name="theme-color" content="#00A2E8" />
     <link
       rel="stylesheet"
@@ -68,52 +68,88 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Verona Bike</a>
+        <a class="navbar-brand" href="index.html"
+          ><img src="assets/logo.png" style="width: 40px" />Verona Bike</a
+        >
       </div>
     </nav>
     <!-- Page content-->
     <div class="container">
       <div class="mt-3">
         <main>
-          <div id="map"></div>
-          <div id="demo"></div>
-          <h3 style="text-align: center">
-            <span style="border-bottom: blue 3px solid">
-              Ciclovia Verona Mantova</span
-            >
-          </h3>
-          <h4 style="text-align: center">44Km, dislivello 100m</h4>
-          <h4 style="text-align: center">Grazie a bicitalia</h4>
-          <h4>show tour in</h4>
-          <a
-            href="https://www.google.com/maps/d/u/0/edit?mid=16GPR_uSur_yhOZLKhfdX6SgiLTT04b0&usp=sharing"
-            target="_blank"
-            ><img src="google.png" class="wikiloc" /><span
-              >Google maps <i class="bi bi-arrow-right-square"></i></span
-          ></a>
+          <div id="map" class="outsetmenu"></div>
+          <div class="mt-3 outsetmenu">
+            <h2 class="text-center mb-0">Verona - Mantova</h2>
+            <h5 class="text-center text-dark">bicitalia ciclovie di qualità</h5>
+            <h6 class="text-center text-dark">
+              Only official bike routes, gpx and video
+            </h6>
+          </div>
+          <div class="mt-3 outsetmenu">
+            <div class="row">
+              <div class="mt-1 col-12">
+                <a
+                  href="nazionali.html"
+                  class="btn btn-danger d-grid btn-lg mt-1"
+                  >national and regional tours</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 outsetmenu">
+            <div class="mt-1 col-12">
+              <a href="locali.html" class="btn btn-regionali d-grid btn-lg mt-1"
+                >local tours</a
+              >
+            </div>
+          </div>
 
-          <br />
-          <a
-            href="https://www.komoot.com/it-it/tour/1207900848?ref=wtd"
-            target="_blank"
-            ><img class="komootsvg" src="komoot.svg" /><span
-              >Komoot <i class="bi bi-arrow-right-square"></i></span
-          ></a>
-          <br />
-          <a
-            href="https://www.alltrails.com/it-it/explore/map/percorso-gpx-2000f63?u=m&sh=awpf2v"
-            target="_blank"
-            ><img src="alltrails.png" class="wikiloc" /><span
-              >AllTrails <i class="bi bi-arrow-right-square"></i></span></a
-          ><br />
-          <a
-            href="https://it.wikiloc.com/percorsi-bicicletta-da-turismo/ciclovia-verona-mantova-140304049"
-            target="_blank"
-            ><img src="wikiloc.png" class="wikiloc" /><span
-              >Wikiloc <i class="bi bi-arrow-right-square"></i></span></a
-          ><br />
-          <br /><br />
-          <div class="container-fluid">
+          <div class="mt-3 outsetmenu">
+            <div class="row">
+              <div class="mt-1 col-12 col-sm-12 col-md">
+                <p class="h3">show tour in</p>
+                <a
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-lg"
+                  href="https://www.google.com/maps/d/u/0/edit?mid=16GPR_uSur_yhOZLKhfdX6SgiLTT04b0&usp=sharing"
+                >
+                  <img src="google.png" />
+                  google maps</a
+                ><br />
+                <a
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-lg mt-2"
+                  href="https://www.komoot.com/it-it/tour/1230271716?ref=wtd"
+                >
+                  <img class="komootsvg" src="komoot.svg" />
+                  Kommot</a
+                ><br />
+                <a
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-lg mt-2"
+                  href="https://www.alltrails.com/it-it/explore/map/percorso-gpx-2000f63?u=m&sh=awpf2v"
+                >
+                  <img src="alltrails.png" class="wikiloc" />
+                  AllTrails</a
+                ><br />
+                <a
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-lg mt-2"
+                  href="https://it.wikiloc.com/percorsi-bicicletta-da-turismo/ciclovia-verona-mantova-140304049"
+                >
+                  <img src="wikiloc.png" class="wikiloc" />
+                  Wikiloc</a
+                >
+
+                <br />
+              </div>
+              <div class="mt-1 col-12 col-sm-12 col-md"></div>
+
+              <div class="mt-1 col-12 col-sm-12 col-md"></div>
+            </div>
+          </div>
+
+          <div class="container-fluid mt-3">
             <div class="row">
               <div class="col text-center">
                 <img src="rv.jpg" class="logos" />
@@ -124,123 +160,25 @@
               <div class="col text-center">
                 <img src="ev7.jpg" class="logos" />
               </div>
-              <div class="col text-center">
-                <img src="aida.png" class="logos" />
-              </div>
             </div>
           </div>
           <br />
         </main>
       </div>
     </div>
-    <!-- Bootstrap core JS-->
-    <!--   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-   -->
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
   </body>
+
+  <script src="js/scripts.js"></script>
+  <script src="js/veronalayer.js"></script>
   <script>
-    var x = document.getElementById("demo");
-    var lat;
-    var lon;
-    var map;
-    var circle;
-    var zoomlevel = 10;
-    var myStyle = {
-      color: "#ff0000",
-    };
-
-    const options = {
-      enableHighAccuracy: true,
-      maximumAge: 10000,
-      timeout: 10000,
-    };
-
-    function error(error) {
-      x.innerHTML = "errore: " + error;
-    }
-
-    function showPosition(position) {
-      lat = position.coords.latitude;
-      lon = position.coords.longitude;
-
-      if (map != undefined) {
-        map.setView([lat, lon], zoomlevel, { animation: true });
-        circle.setLatLng([lat, lon]);
-      } else {
-        getMap();
-      }
-    }
-
-    const watchID = navigator.geolocation.watchPosition(
-      showPosition,
-      error,
-      options
-    );
-
-    function getMap() {
-      map = L.map("map");
-      map.setView([lat, lon], zoomlevel);
-      map.addControl(new L.Control.Fullscreen());
-      map.createPane("puntatore");
-      map.getPane("puntatore").style.zIndex = 650;
-      map.getPane("puntatore").style.pointerEvents = "none";
-      L.tileLayer(
-        "https://tile.openstreetmap.org/{z}/{x}/{y}.png?apikey=00fef80623bc42e589b687b623114593",
-        {
-          maxZoom: 18,
-          minZoom: 6,
-          attribution:
-            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        }
-      ).addTo(map);
-
-      fetch("vrma.geojson")
-        .then((res) => res.json())
-        .then((data) => {
-          L.geoJson(data, {
-            style: function (feature) {
-              return { color: "blue", weight: 8, opacity: 1 };
-            },
-          })
-            .addTo(map)
-            .bindTooltip("ciclovia Verona Mantova");
-        });
-
-      map.on("zoomend", function (e) {
-        console.log(e.target._zoom);
-        zoomlevel = e.target._zoom;
-      });
-      circle = L.circleMarker([lat, lon], {
-        color: "blue",
-        fillColor: "#00f",
-        fillOpacity: 1,
-        radius: 10,
-        pane: "puntatore",
-      }).addTo(map);
-    }
+    getMap();
+    const adige = addVeronaMantova(8);
   </script>
-  <!--  <script>
-    // Don't register the service worker
-    // until the page has fully loaded
-    window.addEventListener("load", () => {
-      // Is service worker available?
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("serviceworker.js")
-          .then(() => {
-            console.log("Service worker registered!");
-          })
-          .catch((error) => {
-            console.warn("Error registering service worker:");
-            console.warn(error);
-          });
-      }
-    });
-  </script> -->
 </html>
