@@ -1,5 +1,3 @@
-var layerGroup = L.layerGroup();
-
 function addEv7(lineweight) {
   var ev7Icon = L.divIcon({
     className: "bl-div-icon",
@@ -458,6 +456,36 @@ function addPath35(pathLayer, pathZoom) {
     });
 }
 
+function addValpo11(pathLayer, pathZoom) {
+  var v11Icon = L.divIcon({
+    className: "bl-div-icon",
+    html: "11",
+    iconSize: [25, 20],
+  });
+  var v11 = L.marker([45.52, 10.838], { icon: v11Icon })
+    .addTo(pathLayer)
+    .on("click", function (ev) {
+      window.location.href = "valpolicella-11.html";
+    });
+
+  fetch("valpo11.geojson")
+    .then((res) => res.json())
+    .then((data) => {
+      // add GeoJSON layer to the map once the file is loaded
+      L.geoJson(data, {
+        style: function (feature) {
+          return { color: "blue", weight: pathZoom, opacity: 1 };
+        },
+        pane: "local",
+      })
+        .addTo(pathLayer)
+
+        .on("click", function (ev) {
+          window.location.href = "valpolicella-11.html";
+        });
+    });
+}
+var layerGroup = L.layerGroup();
 function addTerreDiCustoza(show) {
   var custoza = L.featureGroup();
   const p29 = addPath29(custoza, 3);
@@ -467,6 +495,15 @@ function addTerreDiCustoza(show) {
   const p35 = addPath35(custoza, 3);
 
   layerGroup.addLayer(custoza);
+  if (show) {
+    map.addLayer(layerGroup);
+  }
+}
+
+function addValpolicella(show) {
+  var valpolicella = L.featureGroup();
+  const v11 = addValpo11(valpolicella, 3);
+  layerGroup.addLayer(valpolicella);
   if (show) {
     map.addLayer(layerGroup);
   }
