@@ -79,52 +79,78 @@
         <main>
           <div id="map" class="outsetmenu"></div>
           <div class="mt-3 outsetmenu">
-            <h2 class="text-center mb-0">Valpolicella</h2>
+            <h2 class="text-center mb-0">valpolicella route 46</h2>
+            <h5 class="text-center text-dark">
+              Corno, Settimo, Ponton, Volargne, Ceraino, Dolcè, Peri
+            </h5>
             <h6 class="text-center text-dark">
               Only official bike routes, gpx and video
             </h6>
+          </div>
+          <div class="mt-3 outsetmenu">
+            <div class="mt-1 col-12">
+              <a
+                href="valpolicella.html"
+                class="btn btn-primary d-grid btn-lg mt-1"
+                >Valpolicella</a
+              >
+            </div>
           </div>
 
           <div class="mt-3 outsetmenu">
             <div class="row">
               <div class="mt-1 col-12 col-sm-12 col-md">
-                <span style="background-color: darkmagenta; color: white"
-                  >&nbsp11&nbsp;</span
-                >
-                <img class="komootsvg" src="komoot.svg" />
-
+                <p class="h3">show tour in</p>
+                <br />
                 <a
-                  href="valpolicella-11.html"
-                  class="btn btn-primary d-grid btn-lg"
-                  >tour 11<br />Parona - Domegliara</a
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-lg mt-2 d-none"
+                  href="https://www.komoot.com/it-it/tour/1268235279?ref=wtd&share_token=aDd96Os8CC0c27GOZ4atKl08kJu1A4F55JqHWxmfxNsYpccQ2N"
                 >
-              </div>
-              <div class="mt-1 col-12 col-sm-12 col-md">
-                <span style="background-color: darkmagenta; color: white"
-                  >&nbsp12&nbsp;</span
-                >
-                <img class="komootsvg" src="komoot.svg" />
-                <img class="komootsvg" src="alltrails.png" />
-
+                  <img class="komootsvg" src="komoot.svg" />
+                  Kommot</a
+                ><br />
                 <a
-                  href="valpolicella-12.html"
-                  class="btn btn-primary d-grid btn-lg"
-                  >tour 12<br />Verona - Fosse</a
+                  href="https://www.alltrails.com/it-it/explore/map/map--116877?u=m"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-lg mt-2"
                 >
-              </div>
-              <div class="mt-1 col-12 col-sm-12 col-md">
-                <span style="background-color: darkmagenta; color: white"
-                  >&nbsp46&nbsp;</span
-                >
-
-                <img class="komootsvg" src="alltrails.png" />
-
+                  <img class="komootsvg" src="alltrails.png" />AllTrails</a
+                ><br />
                 <a
-                  href="valpolicella-46.html"
-                  class="btn btn-primary d-grid btn-lg"
-                  >tour 46<br />Verona - Peri</a
-                >
+                  href="https://bike.infovalpolicella.it/itinerario-46/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-lg mt-2"
+                  ><i class="bi bi-info-square-fill infosvg"></i> More
+                  infoValpolicella </a
+                ><br />
               </div>
+              <div class="mt-1 col-12 col-sm-12 col-md d-none">
+                <div class="card mt-1">
+                  <a href="https://youtu.be/OrTfywT4eFo" target="_blank">
+                    <img
+                      class="card-img-top"
+                      src="assets/vigne.jpg"
+                      alt="Card image"
+                    />
+                  </a>
+
+                  <div class="card-body">
+                    <p class="card-title h4">
+                      gps youtube video
+
+                      <a
+                        href="https://youtu.be/OrTfywT4eFo"
+                        class="btn btn-danger"
+                        target="_blank"
+                        ><i class="bi bi-youtube"></i
+                      ></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-1 col-12 col-sm-12 col-md"></div>
             </div>
           </div>
 
@@ -159,7 +185,7 @@
   <script src="js/scripts.js"></script>
   <script src="js/veronalayer.js"></script>
   <script>
-    getMap([45.55, 10.9], 11);
-    const custoza = addValpolicella(true);
+    getMap([45.55, 10.9], 10);
+    const valpo46 = addValpo46(map, 8);
   </script>
 </html>
