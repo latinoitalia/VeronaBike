@@ -30,7 +30,7 @@ function addEv7(lineweight) {
     .on("click", function (ev) {
       window.location.href = "eurovelo-7.html";
     });
-  fetch("ev7.geojson")
+  fetch("geojson/ev7.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -74,7 +74,7 @@ function addAida(lineweight) {
       window.location.href = "aida.html";
     });
 
-  fetch("aida.geojson")
+  fetch("geojson/aida.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -102,7 +102,7 @@ function addEv8() {
     .on("click", function (ev) {
       window.location.href = "destrapo.html";
     });
-  fetch("destrapo.geojson")
+  fetch("geojson/destrapo.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -152,7 +152,7 @@ function addI1(lineweight) {
     .on("click", function (ev) {
       window.location.href = "regione-veneto-i1.html";
     });
-  fetch("i1.geojson")
+  fetch("geojson/i1.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -181,7 +181,7 @@ function addCludiaAugusta(show, lineweight) {
     .on("click", function (ev) {
       window.location.href = "ciclovia-claudia-augusta.html";
     });
-  fetch("cca.geojson")
+  fetch("geojson/cca.geojson")
     .then((res) => res.json())
     .then((data) => {
       L.geoJson(data, {
@@ -221,7 +221,7 @@ function addCdr(show, lineweight) {
     .on("click", function (ev) {
       window.location.href = "ciclovia-delle-risorgive.html";
     });
-  fetch("cdr.geojson")
+  fetch("geojson/cdr.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -261,7 +261,7 @@ function addAdige(lineweight) {
       window.location.href = "adige-sud.html";
     });
 
-  fetch("adigesud.geojson")
+  fetch("geojson/adigesud.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -289,7 +289,7 @@ function addVeronaMantova(lineweight) {
     .on("click", function (ev) {
       window.location.href = "ciclovia-verona-mantova.html";
     });
-  fetch("vrma.geojson")
+  fetch("geojson/vrma.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -319,7 +319,7 @@ function addVigne(pathLayer, pathZoom) {
     })
     .addTo(pathLayer);
 
-  fetch("bussolengo-lago.geojson")
+  fetch("geojson/bussolengo-lago.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -344,7 +344,7 @@ function addPath16(pathLayer, pathZoom) {
       window.location.href = "path16.html";
     });
 
-  fetch("16.geojson")
+  fetch("geojson/16.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -379,7 +379,7 @@ function addPath29(pathLayer, pathZoom) {
       window.location.href = "Ciclabile-29-Terre-di-Custoza.html";
     });
 
-  fetch("29.geojson")
+  fetch("geojson/29.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -409,7 +409,7 @@ function addPath30(pathLayer, pathZoom) {
       window.location.href = "Ciclabile-30-Terre-di-Custoza.html";
     });
 
-  fetch("30.geojson")
+  fetch("geojson/30.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -438,7 +438,7 @@ function addPath35(pathLayer, pathZoom) {
       window.location.href = "Ciclabile-35-Terre-di-Custoza.html";
     });
 
-  fetch("35.geojson")
+  fetch("geojson/35.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -468,7 +468,7 @@ function addValpo11(pathLayer, pathZoom) {
       window.location.href = "valpolicella-11.html";
     });
 
-  fetch("valpo11.geojson")
+  fetch("geojson/valpo11.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -498,7 +498,7 @@ function addValpo12(pathLayer, pathZoom) {
       window.location.href = "valpolicella-12.html";
     });
 
-  fetch("valpo12.geojson")
+  fetch("geojson/valpo12.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
@@ -528,7 +528,7 @@ function addValpo46(pathLayer, pathZoom) {
       window.location.href = "valpolicella-46.html";
     });
 
-  fetch("valpo46.geojson")
+  fetch("geojson/valpo46.geojson")
     .then((res) => res.json())
     .then((data) => {
       // add GeoJSON layer to the map once the file is loaded
