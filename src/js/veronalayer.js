@@ -25,7 +25,7 @@ function addEv7(lineweight) {
       window.location.href = "eurovelo-7.html";
     });
 
-  var ev7e = L.marker([45.62, 10.857], { icon: ev7Icon })
+  var ev7e = L.marker([45.62, 10.852], { icon: ev7Icon })
     .addTo(map)
     .on("click", function (ev) {
       window.location.href = "eurovelo-7.html";
@@ -147,7 +147,7 @@ function addI1(lineweight) {
     .on("click", function (ev) {
       window.location.href = "regione-veneto-i1.html";
     });
-  L.marker([45.4215, 11.2], { icon: i2Icon })
+  L.marker([45.41, 11.15], { icon: i2Icon })
     .addTo(map)
     .on("click", function (ev) {
       window.location.href = "regione-veneto-i1.html";
